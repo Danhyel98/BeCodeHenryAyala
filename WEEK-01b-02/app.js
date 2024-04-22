@@ -269,28 +269,4 @@ for (let i =2; i < 21; i += 2) {
   for (let i = animals.length-1; i>=0; i--) {
     console.log(animals[i]);
   }*/
-  const users = [
-    {
-      firstName: "Vito",
-      lastName: "Corleone",
-    },
-    {
-      firstName: "William",
-      lastName: "Wallace",
-    },
-    {
-      firstName: "Harry",
-      lastName: "Potter",
-    },
-    {
-      firstName: "Amadeus",
-      lastName: "Mozart",
-    },
-    {
-      firstName: "Barack",
-      lastName: "Obama",
-    },
-  ];
-
-  for (let i=users[1].firstName + users[1].lastName; i<=4; i++);
-  console.log(i);
+  
