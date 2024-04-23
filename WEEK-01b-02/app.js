@@ -269,4 +269,235 @@ for (let i =2; i < 21; i += 2) {
   for (let i = animals.length-1; i>=0; i--) {
     console.log(animals[i]);
   }*/
+  /*
+  const users = [
+    {
+      firstName: "Vito",
+      lastName: "Corleone",
+    },
+    {
+      firstName: "William",
+      lastName: "Wallace",
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+    },
+    {
+      firstName: "Amadeus",
+      lastName: "Mozart",
+    },
+    {
+      firstName: "Barack",
+      lastName: "Obama",
+    },
+  ];
+
+  for (let i = 0; i < users.length; i++) {
+    console.log(`${i+1}.My full name is ${users[i].firstName} ${users[i].lastName}`);
+  }
+   */ 
+/*
+  const seatingChart = [
+    ["Colas", "Benoit", "Elodie"],
+    ["Sola", "Irina", "Antonino", "Eli"],
+    ["John", "Maryna", "Naike", "Fabrice"],
+  ];
   
+  // I can use nested loops to do that :
+  
+  for (let i = 0; i < seatingChart.length; i++) {
+    const row = seatingChart[i]; // I created a variable "row" just to be cleaner in the declaration of the next loop. You could put seatingChart[i].length, it would be the same thing
+    for (let j = 0; j < row.length; j++) {
+      console.log(row[j]);
+    }
+  }*/
+/*
+  let num = 0;
+
+while (num < 10) {
+  console.log(num);
+  num++;
+}*/
+/*
+const secretWord = "Hey";
+
+let guess;
+
+while (guess !== secretWord) {
+   guess = prompt("enter the secret code...");
+}
+
+alert("Congratulations! You got the secret code !");*/
+/*
+let num;
+
+while(true) {
+    num = prompt(`Entrer un numéro svp`);
+    if(!isNaN(num)) { 
+        break;
+    } else {
+        alert(`Entrer un chiffre et un chiffre seulement !`);
+    }
+}
+
+let random = Math.floor(Math.random() * num) +1;
+let guess;
+let attempts = 0;
+
+while (guess !== random) {
+    attempts++;
+    guess = parseInt(prompt(`Deviner le chiffre entre 1 et ${num}.`));
+    if(isNaN(guess)) {
+        alert(`Me faut un vrai chiffre`);
+    } else if (guess > random) {
+        alert(`Une réponse plus basse tu as besoin`);
+        
+    } else if (guess < random) {
+        alert(`Une réponse plus grande tu as besoin`);
+  
+    } else {
+        alert(`Enfin tu as trouvé et tu n'as eu besoin que de ${attempts} essaies :p`);
+    }
+}*/
+/*
+let laListe = [];
+
+while (true) {
+ 
+  let command = prompt(`What would you like to do? You can choose : "new", "list", "delete", "quit".`);
+  if (command === "new") {
+    let add = prompt(`What would you like to add?`);
+    if (add) {
+      laListe.push(add);
+      alert (`This element : ${add} has been added to the list`)}
+      else {
+      alert(`Why is it empty?`);
+      }
+    
+    } else if (command === "list") {
+      console.log("***** TODO *****");
+      if (laListe.length === 0) {
+        alert(`This is empty bro`)
+      } else {
+        for (let i= 0; i < laListe.length; i++)  {
+          console.log(`${i + 1}.${laListe[i]}`);
+        }
+      }
+    } else if (command === "delete") {
+      let delnum = parseInt(prompt("Which item would you like to delete? Put a number and only a number please."));
+        if(delnum !== isNaN && delnum > 0 ) {
+          let dele = laListe.splice(delnum -1, 1);
+          console.log(`You delete this task : ${dele}.`)
+        } else {
+          alert("I said a number...come on be better");
+        }
+    } else if (command === "quit") {
+      console.log("You closed the TODO app, please come back");
+      break;
+    } else {
+      console.log(`Wrong command ! Please try : "new", "list", "delete" or "quit"`); 
+    }
+  } */
+
+  /*function myFunctionName() {
+  console.log("DO");
+  console.log("RE");
+  console.log("MI");
+  console.log("FA");
+  console.log("SOL");
+  console.log("LA");
+  console.log("SI");
+}
+
+myFunctionName();
+myFunctionName();
+myFunctionName();
+myFunctionName();
+myFunctionName();
+myFunctionName();
+*/
+/*
+function myDie(faces, times) {
+  for (let i = 1; i <= times; i++) {
+  let dieResult = Math.floor(Math.random() * faces +1);
+  console.log(`Die ${i}: ${dieResult}`);}
+}
+
+myDie(6, 5); */
+/*
+function repeat(txt, times) {
+  if (times !==isNaN) {
+    for (let i= 1; i <= times; i++) {
+      let result = '';
+      result += txt;
+      console.log(result);
+    }
+  } else {
+    console.log("sorry not sorry, that is not a number");
+  }
+}
+
+repeat("Boo", 2);
+*/
+/*
+function greet(firstName, lastName) {
+  console.log(`Welcome, you are : ${firstName} ${lastName[0]}.`);
+}
+
+greet("Henry", "Ayala");*/
+
+/*
+function addidi(number1, number2) {
+  if (number1 !==isNaN && number2 !== isNaN) {
+    return number1 + number2;
+  } else {
+    console.log("Error please give me numbers");
+  }
+  
+}
+const myVariable = addidi(3, 2);
+console.log(myVariable);*/
+/*
+function logs() {
+  console.log("Hello");
+  console.log("World");
+  
+  console.log("Goodbye");
+  return 4;
+  console.log("World");
+}
+
+const myVariable = logs();
+
+console.log(myVariable);*/
+/*
+function isShortWeather(temp) {
+  return temp >= 24;
+}
+
+console.log(isShortWeather(10));*/
+/*
+function lastElement(array) {
+  if (array.length === 0) {
+    return null
+  } else {
+    return array.slice(array.length - 1);
+  }
+  
+}
+
+
+console.log(lastElement([1, 3, 7, 9]));
+console.log(lastElement([1]));
+console.log(lastElement([])); */
+/*
+function capitalize(txt) {
+  const cutWord = txt.slice(0, 1);
+  const firstLetter = cutWord.toUpperCase();
+  const lastPart = txt.slice(1, txt.length);
+  console.log(`${firstLetter}${lastPart}`);
+}
+
+capitalize("denomination");*/
+
