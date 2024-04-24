@@ -244,11 +244,11 @@ const zipcode = restaurant.zipcode;
 const fulladdress = address1 + +city1 + state1 + zipcode;
 console.log(`${address1}, ${city1}, ${state1} ${zipcode}`);
 */
-/* Even numbers
+/* 16 - ForLoops - Even numbers
 for (let i =2; i < 21; i += 2) {
     console.log(i);
   } */
-  /* ODD NUMBERS
+  /* 16- ForLoops - ODD NUMBERS
   for (let i =1; i < 20; i += 2) {
     console.log(i);
   } */
@@ -500,4 +500,191 @@ function capitalize(txt) {
 }
 
 capitalize("denomination");*/
+
+/*
+function sumArray(arr) {
+  if (arr !== isNaN) {
+  let sum = 0;
+  for (let a of arr)
+    sum += a;
+  return sum;
+  }
+}
+console.log(sumArray([1, 2, 3]));
+*/
+/*
+const days = ["Week", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+function returnDay(num) {
+  if (num <= 7 && num >=1) {
+    return days[num];
+  } else {
+    return null;
+  }
+}
+console.log(returnDay(3));*/
+/*
+const i = "Hello World";
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}*/
+/*
+const callTwice = function (func) {
+  func();
+  func();
+};
+
+// Here, the callTwice function takes another function as a parameter and call it two times
+
+const rollDie = function () {
+  const roll = Math.floor(Math.random() * 6 + 1);
+  console.log(roll);
+};
+
+callTwice(rollDie);*/
+/*
+const callTimes = function (func, times) {
+for (i = 0; i < times; i++) {
+  func();
+}
+}
+const rollDie = function () {
+  const roll = Math.floor(Math.random() * 6 + 1);
+  console.log(roll);
+};
+
+callTimes(rollDie,2);*/
+/*const str = "Hello";
+
+
+console.log(str.slice(2,4));*/
+
+/*const user = {
+  firstName: "Vito",
+  lastName: "Corleone",
+  printFullName: function () {
+    console.log("My name is " + this.firstName + " " + this.lastName);
+  },
+};
+user.printFullName();*/
+/*const user = {
+  firstName: "Henry",
+  lastName: "Ayala",
+  age: 25,
+  printAge: function () {
+    console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`)
+  }, 
+  aYearHasPast: function () {
+    this.age++;
+  },
+  
+}
+user.printAge();
+user.aYearHasPast();
+user.printAge();*/
+
+/* SERIES ALGOS*/
+
+/* EXERCICE 00
+function checkPlease(a, b) {
+  if (a === 10 || b === 10 || a + b === 10){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(checkPlease(4, 2));
+console.log(checkPlease(9,10));
+console.log(checkPlease(9,9));
+console.log(checkPlease(1,9));
+*/
+/* EXERCICE 01
+aYear = 365;
+function ageInDays(age) {
+  if (age >= 0 && age !==isNaN) {
+    return age * aYear;
+  } else {
+    console.log("There's a mistake give me your age please;")
+  }
+}
+console.log(ageInDays(30));
+*/
+
+/* EXERCICE 02
+function addUp(num) {
+  if (num === isNaN || num < 1 || num > 1000) {
+    console.log("Please give us a number.")
+  } else {
+    let sum = 0;
+    for (let i = 1; i <= num; i++) {
+      sum += i;
+      
+    }
+    return sum;
+  }
+}
+console.log(addUp(4)); */
+/* EXERCICE 03
+function myArray(arr) {
+   const sortArr = arr.sort((a,b) => a - b);
+    return [sortArr[0], sortArr[arr.length -1]];
+  } 
+
+console.log(myArray([1,4,5,2,6]))*/
+/*EXERCICE 04
+function detectedWord(txt) {
+  let newWord = "";
+  for (let i= 0; i < txt.length; i++) {
+    if (txt[i] === txt[i].toLowerCase()) {
+      newWord += txt[i];
+    }
+  }
+  return newWord;
+}
+console.log(detectedWord("dEdRdT")); 
+console.log(detectedWord("UcUNFYGaFYFYGtNUH"));*/
+
+/*EXERCICE 05
+let drinks = [
+  {name: "lemonade", price: 10},
+  {name: "lime", price: 10},
+  {name: "coke", price: 8},
+  {name: "vodka", price: 17},
+  {name: "water", price: 3},
+];
+
+function sortDrinkByPrice(drinks) {
+  const sorted = drinks.sort((a,b) => a.price - b.price);
+  return sorted;
+}
+console.log(sortDrinkByPrice(drinks));*/
+/* EXERCICE 06
+function animals(chick, cows, pigs) {
+ /* const legsChick = chick * 2;
+  //const legsCows = cows * 4;
+  //const legsPigs = pigs * 4;
+  return (chick* 2) + ((cows + pigs) *4)//(cows * 4) + (pigs * 4); 
+} 
+console.log(animals(2, 3, 5)); */
+
+/* Exercice 07
+const f = (probability, prize, pay) => ((probability * prize)- pay) > 0;
+console.log(f(0.9, 1, 2));
+*/
+
+/* EXERCICE 08
+function frames(fram, minutes) {
+  return ((fram * 60) * minutes);
+}
+console.log(frames(10, 1)); */
+/* EXERCICE 09
+function calculateFuel(numb) {
+  if ((numb * 10) > 100) {
+    return numb * 10;
+  }
+  return 100;
+}
+
+console.log(calculateFuel(23.5));*/
 
