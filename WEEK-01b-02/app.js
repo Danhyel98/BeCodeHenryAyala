@@ -1,5 +1,6 @@
 /* Ex 2 running-js
 console.log("I am in the console");*/
+
 /* Exercice 4 - Variables 
 let myName = "Henrique";
 
@@ -11,6 +12,7 @@ var a = "3";
 var b = "8";
 console.log("a is " + a);
 console.log("b is " + b); */
+
 /* Exercice 6 - Practice 
 // DON'T TOUCH THIS LINE!
 const message = "    TASTE THE RAINBOW!  "; //DON'T CHANGE THIS LINE PLEASE!
@@ -599,8 +601,8 @@ console.log(checkPlease(9,10));
 console.log(checkPlease(9,9));
 console.log(checkPlease(1,9));
 */
-/* EXERCICE 01
-aYear = 365;
+//EXERCICE 01
+/*aYear = 365;
 function ageInDays(age) {
   if (age >= 0 && age !==isNaN) {
     return age * aYear;
@@ -608,11 +610,11 @@ function ageInDays(age) {
     console.log("There's a mistake give me your age please;")
   }
 }
-console.log(ageInDays(30));
-*/
+console.log(ageInDays(30));*/
 
-/* EXERCICE 02
-function addUp(num) {
+
+// EXERCICE 02
+/*function addUp(num) {
   if (num === isNaN || num < 1 || num > 1000) {
     console.log("Please give us a number.")
   } else {
@@ -625,15 +627,15 @@ function addUp(num) {
   }
 }
 console.log(addUp(4)); */
-/* EXERCICE 03
-function myArray(arr) {
+// EXERCICE 03
+/*function myArray(arr) {
    const sortArr = arr.sort((a,b) => a - b);
     return [sortArr[0], sortArr[arr.length -1]];
   } 
 
 console.log(myArray([1,4,5,2,6]))*/
-/*EXERCICE 04
-function detectedWord(txt) {
+// EXERCICE 04
+/*function detectedWord(txt) {
   let newWord = "";
   for (let i= 0; i < txt.length; i++) {
     if (txt[i] === txt[i].toLowerCase()) {
@@ -645,8 +647,8 @@ function detectedWord(txt) {
 console.log(detectedWord("dEdRdT")); 
 console.log(detectedWord("UcUNFYGaFYFYGtNUH"));*/
 
-/*EXERCICE 05
-let drinks = [
+// EXERCICE 05
+/*let drinks = [
   {name: "lemonade", price: 10},
   {name: "lime", price: 10},
   {name: "coke", price: 8},
@@ -659,27 +661,27 @@ function sortDrinkByPrice(drinks) {
   return sorted;
 }
 console.log(sortDrinkByPrice(drinks));*/
-/* EXERCICE 06
-function animals(chick, cows, pigs) {
- /* const legsChick = chick * 2;
+// EXERCICE 06
+/*function animals(chick, cows, pigs) {
+ //const legsChick = chick * 2;
   //const legsCows = cows * 4;
   //const legsPigs = pigs * 4;
   return (chick* 2) + ((cows + pigs) *4)//(cows * 4) + (pigs * 4); 
 } 
 console.log(animals(2, 3, 5)); */
 
-/* Exercice 07
-const f = (probability, prize, pay) => ((probability * prize)- pay) > 0;
-console.log(f(0.9, 1, 2));
-*/
+// Exercice 07
+/*const f = (probability, prize, pay) => ((probability * prize)- pay) > 0;
+console.log(f(0.9, 1, 2));*/
+
 
 /* EXERCICE 08
 function frames(fram, minutes) {
   return ((fram * 60) * minutes);
 }
 console.log(frames(10, 1)); */
-/* EXERCICE 09
-function calculateFuel(numb) {
+ //EXERCICE 09
+/*function calculateFuel(numb) {
   if ((numb * 10) > 100) {
     return numb * 10;
   }
@@ -687,4 +689,3 @@ function calculateFuel(numb) {
 }
 
 console.log(calculateFuel(23.5));*/
-
