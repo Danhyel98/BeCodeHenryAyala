@@ -44,7 +44,7 @@ console.log(toArray({a: 1, b: 2})); */
 } 
 console.log(arrayOfMultiples(7,5)); */
 
-// EXERCICE 5
+// EXERCICE 05
 /*function removeLeadingTrailing(number) {
     return parseFloat(number).toString()
 } console.log(removeLeadingTrailing("230.000"));*/
@@ -53,7 +53,7 @@ console.log(arrayOfMultiples(7,5)); */
 const removeLeadingTrailing = (number) => parseFloat(number).toString();
 console.log(removeLeadingTrailing("230.000"));*/
 
-//EXERCICE 6
+//EXERCICE 06
 /*
 const sortIt = (arr) => arr.sort();
 console.log(sortIt([4, 1, 3]));
@@ -61,7 +61,7 @@ console.log(sortIt([[4], [1], [3]]));
 console.log(sortIt([4, [1], 3]));
 console.log(sortIt([[4], 1, [3]]));
 console.log(sortIt([[3], 4, [2], [5], 1, 6]));*/
-//EXERCICE 7
+//EXERCICE 07
 /*
 function calculator(num1, sign, num2) {
     if (sign === "+") {
@@ -101,4 +101,5 @@ console.log(areaOfCountry("Iran", 1648195));*/
  console.log(reverseWords(" the sky is blue"));
  console.log(reverseWords("hello   world!  "));
  console.log(reverseWords("a good example"));*/
+
  
