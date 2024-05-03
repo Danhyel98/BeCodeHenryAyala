@@ -1,17 +1,17 @@
 /* Ex 2 running-js
 console.log("I am in the console");*/
 
-/* Exercice 4 - Variables 
-let myName = "Henrique";
-
-console.log(myName);
-
-alert(myName);
-
-var a = "3";
+//Exercice 4 - Variables 
+/*var a = "3";
 var b = "8";
-console.log("a is " + a);
-console.log("b is " + b); */
+
+/***********Do not change the code above 👆*******/
+//Write your code here :
+
+/***********Do not change the code below 👇*******/
+
+//console.log("a is " + a);
+//console.log("b is " + b);
 
 /* Exercice 6 - Practice 
 // DON'T TOUCH THIS LINE!
