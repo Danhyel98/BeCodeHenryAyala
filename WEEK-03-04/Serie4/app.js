@@ -61,9 +61,26 @@ console.log(isPalindrome("Hello World"));
 console.log(isPalindrome("Madam, I'm Adam"));*/
 
 //EXERCICE 03
-function caesarCipher(str, num) {
-   let newStr= str.toLowerCase()
-}
+/*function caesarCipher(str,num) {
+   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+   let smallStr = str.toLowerCase();
+   let newStr= '';
+   for (let i = 0;i<smallStr.length;i++) {
+      let index = alphabet.indexOf(smallStr[i]);
+      if (index === -1) {
+         newStr+= smallStr[i];
+      } else  {
+         let newIndex = (index+num) % alphabet.length;
+         if (newIndex < 0) {
+            newIndex+=alphabet.length;
+         }
+         newStr+=alphabet[newIndex];
+      }
+   } return newStr;
+} 
+console.log(caesarCipher("zoo keeper", 2));
+console.log(caesarCipher("bqq mggrgt", -2));
+console.log(caesarCipher("My name is Henrique", 3));*/
 
 //EXERCICE 04
 /*
