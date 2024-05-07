@@ -16,7 +16,7 @@
 listNum(20)*/
 
 // EXERCICE 01
-/*function ransomNote(noteText, magazineText) {
+function ransomNote(noteText, magazineText) {
     
    const noteWords = noteText.split(" ");
    const magazineWords = magazineText.split(" ");
@@ -36,15 +36,10 @@ listNum(20)*/
    }
 
    return true;
-}*/
+}
 
-//console.log(ransomNote("this is a secret note to you from a secret admirer","puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"));
-
-//console.log(ransomNote("this is a secret note to you from a secret admirer", "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"));
-//console.log(ransomNote("this is a note to you from a secret admirer", "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"));
-//console.log(ransomNote("Today I was today years old", "Today I'm pretty not like yesterday"));
-//console.log(ransomNote("Today I was today years old", "Today I'm pretty not like today"));
-
+console.log(ransomNote("this is a secret note to you from a secret admirer","puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"));
+console.log(ransomNote("this is a note to you from a secret admirer", "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"));
 
 
 //EXERCICE 02
