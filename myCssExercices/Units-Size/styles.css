@@ -1,0 +1,24 @@
+*,
+*::before
+*::after {
+    
+    box-sizing: border-box;
+    
+}
+*{
+    margin : 0;
+}
+
+.blabla {
+    background-color: pink;
+    min-height: 50vh;
+    max-height: 75vh;
+}
+.i-am-the-boss {
+    background-color: cyan;
+    padding: 20px 20px;
+    font-size: 1.2rem;
+}
+html {
+    font-size: 30px;
+}

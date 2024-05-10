@@ -11,6 +11,7 @@ body {
     font-weight: 400;
     background-color: rgb(52,52,52);
     color: white;
+    font-size : 15px;
 }
 *
 *::before
@@ -32,3 +33,40 @@ h1 {
     border-bottom: 1px solid white;
 }
 
+h1>span{
+    color : #ffb30e;
+    font-weight: bold;
+}
+
+p {
+    padding-top: 50px;
+    width: 500px;
+    margin : auto auto;
+    letter-spacing: 1px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+p >span {
+    font-weight: bold;
+    color: #ffb30e;
+}
+
+a {
+    text-align: center;
+    display: block;
+    width: 100px;
+    margin: auto;
+    margin-top: 50px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: black;
+    background-color: #ffaf03;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+a:hover {
+    background-color: #fbca62;
+}
