@@ -1,0 +1,160 @@
+.noto-sans-symbols-<uniquifier> {
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: content-box;
+}
+*{
+    margin: 0;
+}
+body {
+    background-color: #2D4480;
+    ;
+}
+.container {
+    background-color: #FFF;
+    width: 288px;
+    height: 469px;
+    border-radius: 27px;
+    margin: auto;
+    margin-top: 150px;
+    box-shadow: 5px 20px 50px rgba(0,0,0,0.6);
+}
+
+h1{
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Noto Sans Symbols";
+    font-weight: 300;
+    line-height: 36px;
+    font-size: 36px;
+    color: #292929;
+    padding-bottom: 15px;
+}
+
+.orangeCont {
+    background-color: #FFBC0F;
+    border-radius: 34px;
+    width: 181px;
+    height: 68px;
+    position: fix;
+    top: 0px;
+    left: 0px;
+}
+.orangeCont>p{
+    color: #253868;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    position: relative;
+    top: 15px;
+    left: 40px;
+    text-transform: uppercase;
+}
+img{
+    width: 20px;
+    height: 20px;
+    padding-right: 14px;
+    padding-left: 15px;
+
+}
+.featOne {
+    width: 159px;
+    height: 33px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.featOne>p{
+    display: inline-block;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    color: #000;
+}
+
+.featTwo {
+    width: 163px;
+    height: 33px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.featTwo>p{
+    display: inline-block;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    color: #000;
+}
+.featThree {
+    width: 176px;
+    height: 33px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.featThree>p{
+    display: inline-block;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    color: #000;
+}
+.featFour {
+    width: 170px;
+    height: 33px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.featFour>p{
+    display: inline-block;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    color: #000;
+}
+.featFive {
+    width: 160px;
+    height: 33px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.featFive>p{
+    display: inline-block;
+    font-family: "Noto Sans Symbols";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32.8px;
+    letter-spacing: 6%;
+    color: #000;
+}
+hr{
+    width: 188px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #000
+}
+.tag{
+    width: 97px;
+    height: 36px;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: "Noto Sans Symbols";
+    color: #292929;
+}
