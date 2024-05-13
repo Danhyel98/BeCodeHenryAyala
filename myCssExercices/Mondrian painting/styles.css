@@ -1,0 +1,84 @@
+*
+*::before
+*::after {
+    
+    box-sizing: border-box;
+    
+}
+*{
+    margin : 0;
+}
+
+body{
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 748px;
+    height: 748px;
+    display: grid;
+    grid-template-columns: 320px 198px 153px 50px;
+    grid-template-rows: 414px 130px 155px 20px;
+    gap: 9px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.redCont{
+    grid-area: 1/1/1/2;
+    background-color: red;
+    
+}
+
+.secCont {
+    background-color: #F0F1EC;
+    grid-area: 1/2/1/5;
+}
+
+.thirdCont {
+    background-color: #F0F1EC;
+    grid-area: 2/1/4/2;
+}
+
+.fourthCont {
+    background-color: #F0F1EC;
+    grid-area: 2/2/4/4;
+}
+
+.fiveCont {
+    background-color: #004592;
+    grid-area: 2/4/3/5;
+    border-bottom: 10px solid #212121;
+}
+
+.sixCont {
+    background-color: #F0F1EC;
+    grid-area: 3/5/5/4;
+}
+
+.sevenCont {
+    background-color: #F0F1EC;
+    grid-area: 4/1/4/2;
+}
+
+.eightCont {
+    background-color: #f8d01f;
+    grid-area: 4/2/4/2;
+}
+
+.nineCont {
+    background-color: #232629;
+    grid-area: 4/3/4/3;
+}
+
+/* #redCont {
+    background-color: red;
+    /* width: 320px;
+    height: 414px; 
+    border-right: 9px solid black;
+    border-bottom: 9px solid black;
+    grid-column-start: 1;
+    grid-column-end: 3;
+} */
