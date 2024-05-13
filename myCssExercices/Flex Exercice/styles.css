@@ -43,9 +43,8 @@ h1{
     border-radius: 34px;
     width: 181px;
     height: 68px;
-    position: fix;
-    top: 0px;
-    left: 0px;
+    margin: auto;
+    margin-top: 56px;
 }
 .orangeCont>p{
     color: #253868;
@@ -70,7 +69,7 @@ img{
     width: 159px;
     height: 33px;
     text-transform: uppercase;
-    text-align: center;
+    margin-left: 46px;
 }
 .featOne>p{
     display: inline-block;
@@ -87,6 +86,7 @@ img{
     height: 33px;
     text-transform: uppercase;
     text-align: center;
+    margin-left: 46px;
 }
 .featTwo>p{
     display: inline-block;
@@ -102,6 +102,7 @@ img{
     height: 33px;
     text-transform: uppercase;
     text-align: center;
+    margin-left: 46px;
 }
 .featThree>p{
     display: inline-block;
@@ -117,6 +118,7 @@ img{
     height: 33px;
     text-transform: uppercase;
     text-align: center;
+    margin-left: 46px;
 }
 .featFour>p{
     display: inline-block;
@@ -132,6 +134,7 @@ img{
     height: 33px;
     text-transform: uppercase;
     text-align: center;
+    margin-left: 46px;
 }
 .featFive>p{
     display: inline-block;
@@ -146,15 +149,29 @@ hr{
     width: 188px;
     margin: auto;
     margin-top: 30px;
-    border: 1px solid #000
+    border: 1px solid #000;
+    margin-bottom: 8px;
 }
 .tag{
     width: 97px;
     height: 36px;
     font-size: 36px;
     line-height: 36px;
-    letter-spacing: 2px;
+    letter-spacing: 7px;
     font-weight: 700;
     font-family: "Noto Sans Symbols";
     color: #292929;
+    margin: auto;
+}
+.forever{
+    text-align: right;
+    width: 94px;
+    height: 36px;
+    font-family: 'Allan';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    color: #2D4480;
+    margin-top: 15px;
+    margin-left: 130px;
 }
