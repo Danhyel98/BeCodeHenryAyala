@@ -14,6 +14,7 @@
     background: #3A3D46;
     width: 100%;
     margin: 0 auto;
+    
 
 }
 .menu-nav {
@@ -57,7 +58,7 @@ nav>ul>li{
 }
 
 .black-block{
-    background: #353535;
+    background: #232323;
     margin: 0 auto;
     width: 100%;
 }
@@ -161,7 +162,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
      */
-    transform: translateX(680px);
+    transform: translateX(390px);
     width: 145px;
 }
 
