@@ -152,15 +152,16 @@ h2 {
     justify-content: flex-start;
     margin-top: 82px;
 }
-/* .cont-hr{
+.cont-hr{
     max-width: 1200px;
     margin: 0 auto;
-} */
+}
 #last-hr{
-    transform: translateX(390px);
+    transform: translateX(40px);
     color: #000000;
     width: 145px;
     height: 2px;
+
 }
 
 #first-img {
