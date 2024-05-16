@@ -1,0 +1,102 @@
+*,
+* ::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+}
+
+.menu {
+    background: #3A3D46;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.menu-nav {
+    height: 65px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+nav {
+    width: 331px;
+    height: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: "Inter";
+}
+
+nav>ul{
+    list-style: none;
+    text-align: right;
+
+}
+
+nav>ul>li{
+    display: inline-block;
+}
+
+#logo {
+    height: 30px;
+}
+
+
+.black-block{
+    background: #000;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.first-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    min-height: 600px;
+    margin: 0 auto;
+    max-width: 1200px;
+    color: white;
+    font-family: "Raleway";
+}
+
+#first-block{
+    width: 463px;
+    height: 327px;
+    padding-top: 143px;
+}
+ #first-p{
+    font-weight: 800;
+    font-size: 65px;
+    line-height: 65px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+ }
+#first-p>span{
+    color:orange;
+}
+
+#sec-p {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 26px;
+    color: #007DFC;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    text-align: left;
+    letter-spacing: 4%;
+}
+#lorem-p{
+    padding-top: 22px;
+    width: 387px;
+}
+#sec-block>img {
+    width: 100%;
+    object-fit: cover;
+}

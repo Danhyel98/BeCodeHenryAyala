@@ -1,0 +1,143 @@
+*,
+* ::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+}
+
+.premClass{
+    width: 1440px;
+    height: 65px;
+    background-color: #3A3D46;
+}
+.firstCont{
+    width: 1200px;
+}
+.menu {
+    height: 14px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+/*height 100vh*/
+.menu>li{
+}
+
+.secClass{
+    background-color: #2a2929;
+    width: 1440px;
+    height: 630px;
+}
+
+.secCont {
+    width: 1200px;
+}
+
+#new {
+    width: 463px;
+    height: 327px;
+    padding-left: 120px;
+    padding-top: 65px;
+
+}
+#firstP {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+    font-size: 65px;
+    font-family: "Raleway";
+    line-height: 65px;
+    letter-spacing: 2px;
+}
+#firstP>span {
+    color: rgb(248, 177, 46);
+}
+
+#secP{
+    color: #007DFC;
+    font-size: 26px;
+    letter-spacing: 2px;
+    padding-left: 4px;
+    font-family: "Raleway";
+}
+
+#thirdP {
+    padding-top: 21px;
+    width: 387px;
+    height: 105px;
+    font-size: 16px;
+    font-family: "Raleway";
+    font-weight: 400;
+    line-height: 20.88px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+#firstHr {
+    margin-top: 23px;
+}
+
+#btn {
+    color: #000000;
+    background-color: #FFB800;
+    border-radius: 45px;
+    width: 141px;
+    height: 41px;
+}
+#btn>p {
+    width: 87px;
+    height: 21px;
+    padding-left: 27px;
+    padding-top: 10px;
+    font-size: 16px;
+    font-family: "Raleway";
+    line-height: 20.88px;
+}
+
+#fotoHommeDessin{
+    width: 590px;
+    height: 590px;
+    display: flex;
+    justify-content: flex-end;
+}
+.thirdClass {
+    width: 1440px;
+    height: 674px;
+}
+
+.gridImg{
+    width: 1200px;
+    height: 559px;
+    display: grid;
+    grid-template-columns: 559px 386px 386px;
+    grid-template-rows: 1159px 1159px;
+}
+
+.first {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #007DFC;
+    width: 387px;
+    height: 559px;  
+}
+#firstFoto {
+    width: 387px;
+    height: 559px;
+}
+
+.second {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#secFoto {
+    width: 386px;
+    height: 269px;
+}
