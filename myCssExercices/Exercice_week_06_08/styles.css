@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    min-height: 100vh;
+}
+/*Display on mobile*/
+@media (min-width: 481px) and (max-width: 767px) {
+
+body {
+background-color: gold;
+}
+     .b,.c,.d,.e {
+        display: none;
+    }
+
+}
+
+/*Display from 768px (tablet)*/
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    body {
+        background-color: pink;
+    }
+    .a,.c,.d,.e {
+        display: none;
+    }
+}
+
+/*Display from 1280px (laptop 13')*/
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+    body {
+        background-color: chocolate;
+    }
+    .a,.b,.d,.e {
+        display: none;
+    }
+}
+/*Display from 1440px (laptop)*/
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+    body {
+        background-color: cadetblue;
+    }
+    .a,.b,.e,.c {
+        display: none;
+    }
+}
+
+
+/*Display from 1920 (desktop)*/
+
+@media (min-width: 1920px) {
+    body {
+        background-color: cornflowerblue;
+    }
+    .a,.b,.d,.c {
+        display: none;
+    }
+}
