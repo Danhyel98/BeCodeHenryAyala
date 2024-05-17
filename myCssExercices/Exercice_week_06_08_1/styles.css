@@ -12,7 +12,7 @@ body{
     min-height: 100vh;
 }
 /*Display on mobile*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 426px) and (max-width: 767px) {
 
 body {
 background-color: gold;

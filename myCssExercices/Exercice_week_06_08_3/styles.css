@@ -18,9 +18,10 @@ div{
     background-color: yellow;
     margin: 0px auto;
 }
-.flex-container {
+.grid-container {
     background-color: blue;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-direction: column;
 }
 #didi:nth-child(1){
@@ -41,8 +42,17 @@ div{
 #didi:nth-child(6){
     background-color: green;
 }
-@media(min-width:426px){
-    .flex-container{
-        flex-direction: row;
+/*For mobile*/
+@media(min-width:426px) and (max-width: 768px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+/*For tablet*/
+@media(min-width: 768px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
     }
 }
