@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+body{
+    width: 1110px;
+    margin: 0 auto;
+    font-family: "Inter";
+}
+.menu-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 72px;
+    
+}
+ul {
+    display: flex;
+    gap: 40px;
+    
+}
+.grid-main {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin: 0px auto;
+}
+
+#grid-sec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0px auto;
+
+}
+
+#img1 {
+    object-fit: cover;
+    grid-area: 1/1/1/2;
+}
