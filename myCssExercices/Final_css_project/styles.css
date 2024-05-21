@@ -10,10 +10,12 @@
     list-style: none;
     text-decoration: none;
 }
-
+img{
+    width: 100%;
+}
 
 body{
-    width: 1110px;
+    max-width: 1110px;
     margin: 0 auto;
     font-family: "Inter";
 }
@@ -21,8 +23,13 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 72px;
+    margin-top: 72px;
+    margin-bottom: 72px;
     
+}
+
+#logo{
+    max-width: 64px;
 }
 ul {
     display: flex;
@@ -30,8 +37,9 @@ ul {
     
 }
 .grid-main {
+    width: 100%;
     display:grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin: 0px auto;
 }
@@ -41,10 +49,148 @@ ul {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin: 0px auto;
+    height: 511px;
+    gap: 30px;
 
 }
 
-#img1 {
+#item1 {
+    grid-column: 1/3;
+    grid-row: 1/1;
+}
+
+#img1{
+    height: 300px;
+    width: 730px;
     object-fit: cover;
-    grid-area: 1/1/1/2;
+    object-position: 0% 0%;
+}
+
+#h1-web{
+    font-family: "Inter";
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 56px;
+    width: 350px;
+    height: 182px;
+    grid-area: 2/1/2/2;
+}
+
+.black-cont {
+    width: 350px;
+    height: 511px;
+    background-color: black;
+    color: white;
+}
+
+#title-bc {
+    color: #E9AA52;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    width: 88px;
+    height: 40px;
+    padding-left: 24px;
+    margin-bottom: 34px;
+    margin-top: 32px;
+}
+
+#content-p {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+#Hydro-title, #Down-title, #VC-title {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFDFA;
+    margin-bottom: 8px;
+}
+
+
+#Hydro-title {
+    width: 262px;
+    height: 24px;
+}
+#prem-p {
+    width: 302px;
+    height: 52px;
+    color: #C5C6CE;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+#Down-title {
+    width: 286px;
+    height: 24px;
+    line-height: 24px;
+}
+#sec-p {
+    width: 302px;
+    height: 52px;
+    color: #C5C6CE;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+#VC-title {
+    width: 250px;
+    height: 24px;
+    
+}
+#third-p {
+    width: 302px;
+    height: 52px;
+    color: #C5C6CE;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+#linear{
+    height: 1px;
+    width: 302px;
+    border-bottom: 1px solid #5E607A;;
+    margin-top: 29px;
+    margin-bottom: 31px;
+}
+
+#p-grid {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    color: #5E607A;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    width: 350px;
+    min-height: 104px;
+    position: relative;
+}
+
+#btn {
+    width: 185px;
+    height: 48px;
+    color: #FFFDFA;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: #F15D51;
+    text-align: center;
+    padding: 13px 35px 11px 31px;
+    position: absolute;
+    bottom: 0;
+}
+
+.last-grid {
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
 }
