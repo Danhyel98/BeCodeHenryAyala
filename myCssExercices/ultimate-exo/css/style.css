@@ -1,0 +1,112 @@
+#btn-2, #btn-1 {
+  text-transform: uppercase;
+}
+
+#btn-2, #btn-1 {
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/deco1.svg"), linear-gradient(236.56deg, #2C2D65 0.35%, #201F22 100%);
+  background-repeat: no-repeat;
+  background-position: 110% -100%;
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1110px;
+  border: 1px solid 0;
+  margin: 0 auto;
+  color: #fff;
+}
+
+header {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 121px;
+  height: 38px;
+  top: 31px;
+  left: 124px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: "Barlow";
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.4px;
+  text-align: left;
+  margin: 30px 0;
+  padding-bottom: 30px;
+}
+#logo span {
+  color: #e6616c;
+}
+
+ul {
+  display: flex;
+}
+ul li {
+  padding-top: 40px;
+  padding-right: 30px;
+  font-family: "Barlow";
+}
+
+.aw-p h1 {
+  font-family: "Barlow";
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 76.8px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.aw-p h2 {
+  font-family: "Barlow";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.4px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  color: #E8AB36;
+}
+.aw-p p {
+  width: 406px;
+  height: 103px;
+  top: 390px;
+  left: 124px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Barlow;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0.045em;
+  text-align: left;
+}
+
+.btn {
+  display: flex;
+  width: 328px;
+  height: 43px;
+  gap: 0px;
+  border-radius: 75px 0px 0px 0px;
+  opacity: 0px;
+  color: green;
+}

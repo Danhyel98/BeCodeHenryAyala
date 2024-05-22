@@ -1,0 +1,13 @@
+%btn {
+    text-transform: uppercase;
+    
+}
+
+#btn-1 {
+    @extend %btn;
+
+}
+
+#btn-2 {
+    @extend %btn;
+}
