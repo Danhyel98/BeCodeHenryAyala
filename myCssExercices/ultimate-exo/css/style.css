@@ -1,0 +1,209 @@
+#btn-2, #btn-1 {
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/deco1.svg"), linear-gradient(236.56deg, #2C2D65 0.35%, #201F22 100%);
+  background-repeat: no-repeat;
+  background-position: 110% -100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1110px;
+  border: 1px solid 0;
+  margin: 0 auto;
+  color: #fff;
+}
+
+header {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  width: 121px;
+  height: 38px;
+  top: 31px;
+  left: 124px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: "Barlow";
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.4px;
+  text-align: left;
+  margin: 30px 0;
+  padding-bottom: 30px;
+}
+#logo span {
+  color: #e6616c;
+}
+
+ul {
+  display: flex;
+}
+ul li {
+  padding-top: 40px;
+  padding-right: 30px;
+  font-family: "Barlow";
+}
+
+.aw-p {
+  margin-top: 110px;
+}
+.aw-p h1 {
+  font-family: "Barlow";
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 76.8px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 2Opx;
+}
+.aw-p h2 {
+  font-family: "Barlow";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.4px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  color: #E8AB36;
+  margin-bottom: 20px;
+}
+.aw-p p {
+  width: 406px;
+  height: 103px;
+  top: 390px;
+  left: 124px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Barlow;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: flex;
+  position: relative;
+}
+.btn #btn-1 {
+  background-color: #e6616c;
+  max-width: 152px;
+  height: 43px;
+  gap: 0px;
+  border-radius: 75px;
+  opacity: 0px;
+  text-align: center;
+  padding-top: 5px;
+}
+.btn #btn-2 {
+  background-color: white;
+  max-width: 152px;
+  height: 43px;
+  gap: 0px;
+  border-radius: 75px;
+  opacity: 0px;
+  text-align: center;
+  padding-top: 5px;
+  color: #000;
+  margin-left: 24px;
+}
+
+.btn::before {
+  content: url(../img/deco3\ 1.svg);
+  position: absolute;
+  z-index: -1;
+  top: -19rem;
+  left: -3rem;
+}
+
+.btn::after {
+  content: url(../img/deco2.svg);
+  position: absolute;
+  left: 285px;
+  top: -65px;
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 1fr 470px;
+  gap: 145px;
+}
+.grid1 #img-grid1 {
+  grid-column: 1/1;
+}
+.grid1 #p-grid {
+  max-width: 470px;
+  font-family: "Barlow";
+  grid-column: 2/3;
+}
+.grid1 #p-grid #p-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5019607843);
+  width: 62px;
+  margin-bottom: 10px;
+}
+.grid1 #p-grid #p-2 {
+  width: 415px;
+  height: 128px;
+  font-family: "Barlow" Condensed;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 64px;
+  text-align: left;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+.grid1 #p-grid #p-3 {
+  font-family: Barlow;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  max-width: 470px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+.grid1 #p-grid #p-4 {
+  font-family: Barlow;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5019607843);
+  margin-bottom: 30px;
+}
+.grid1 #p-grid #btn-1 {
+  background-color: #e6616c;
+  max-width: 152px;
+  height: 43px;
+  gap: 0px;
+  border-radius: 75px;
+  opacity: 0px;
+  text-align: center;
+  padding: 10px 20px;
+}
