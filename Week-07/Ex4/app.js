@@ -33,7 +33,7 @@ colLi.forEach(function(myList){
 const lastItem= colLi[colLi.length-1];
 lastItem.style.color = 'gold';
 
-
+// give color red to hall
 const hallItem = Array.from(colLi).find(item => item.innerText.includes("Annie Hall"));
 if (hallItem) {
     hallItem.innerHTML = hallItem.innerHTML.replace("Hall", '<span style="color: red;">Hall</span>');
