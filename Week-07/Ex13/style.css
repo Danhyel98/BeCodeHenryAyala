@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 *,
 *::before,
 *::after {
@@ -7,17 +8,24 @@
     margin: 0;
     padding: 0;
 }
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Oswald";
     background: linear-gradient(236.56deg, #2C2D65 0.35%, #201F22 100%);
 }
-.container {
-    max-width: 1110px;
-    height: 700px;
-    margin: 0 auto;
-    
+
+h2 {
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
 }
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
 
 
 form {
@@ -27,7 +35,7 @@ form {
     margin-top: 10%;
     border : 2px solid white;
     border-radius: 20px;
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: white;
     
 }
 form > p {
@@ -40,11 +48,53 @@ form > p {
 
 #submit {
     width: 300px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
     display: block;
     border: 5px solid black;
-    border-radius: 12px;
+    border-radius:12px;
     margin: 0 auto;
+    background-color: initial;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    padding: 0 20px;
+    margin-top: 10px;
+}
 
+
+#submit:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+    }
+
+input {
+    border-radius: 35px;
+}
+
+label {
+    padding-bottom:5px;
+}
+
+.group-item {
+    display: grid;
+}
+
+input[type=submit] {
+    width: 100%;
+    color: white;
+    padding: 10px 0px;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.msg {
+    display: none;
 }
