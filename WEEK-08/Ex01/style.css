@@ -1,0 +1,5 @@
+.todo-item {
+    display: flex;  /* Make items appear in a row */
+    align-items: center;
+    gap: 20px;
+}
