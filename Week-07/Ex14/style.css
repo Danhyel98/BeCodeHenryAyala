@@ -57,7 +57,7 @@ body {
     bottom: 0;
     left: 0;
     width: 85px;
-    height: 38px; /*REVOIR CECI*/
+    height: 40px; /*REVOIR CECI*/
     background-color: #FF2E63;
     z-index: -1;
 }
@@ -96,6 +96,6 @@ body {
 
 #play-again:hover {
     padding: 10px 40px;
-    background-color: #08d9d6;
+    background-color: white;
     color: #000;
 }

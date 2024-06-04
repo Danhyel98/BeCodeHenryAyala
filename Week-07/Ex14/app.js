@@ -19,10 +19,12 @@ function changeTurn () {
     if(turn === "X") {
         turn ="O";
         document.querySelector(".bg").style.left = "85px";
+        
 
-    } else {
+    } 
+    else {
         turn ="X";
-        document.querySelector(".bg").style.left = "85px";
+        document.querySelector(".bg").style.left = "0";
 
     }
 } 
@@ -53,7 +55,7 @@ function checkWin() {
 
             
         for (j=0; j<3;j++) {
-            boxes[winCombinations[i][j]].style.backgroundColor = "#08D9D6";
+            boxes[winCombinations[i][j]].style.backgroundColor = "white";
             boxes[winCombinations[i][j]].style.color ="#000";
         }
 
