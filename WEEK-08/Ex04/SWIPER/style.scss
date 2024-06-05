@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.swiper {
+  }
+
+
+  body {
+    section{
+        width: 100%;
+    }
+    .swiper {
+        height: 100vh;
+        width: 100%;
+        .swiper-slide {
+            background: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+   
+.swiper-button-prev, .swiper-button-next {
+    width: 30px;  /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    background: none;  /* Remove background */
+    border: none;  /* Remove border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;  /* Remove any padding */
+    margin: 0;  /* Remove any margin */
+    z-index: 10;  /* Ensure the buttons are above other elements */
+    cursor: pointer;  /* Change cursor to pointer */
+}
+
+.swiper-button-prev img, .swiper-button-next img {
+    width: 100%; /* Make the images fill the button */
+    height: 100%;
+    object-fit: contain;
+}
+
+
+  }

@@ -1,0 +1,47 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body section {
+  width: 100%;
+}
+body .swiper {
+  height: 100vh;
+  width: 100%;
+}
+body .swiper .swiper-slide {
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body .swiper-button-prev, body .swiper-button-next {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
+  z-index: 10; /* Ensure the buttons are above other elements */
+  cursor: pointer; /* Change cursor to pointer */
+}
+body .swiper-button-prev img, body .swiper-button-next img {
+  width: 100%; /* Make the images fill the button */
+  height: 100%;
+  object-fit: contain;
+}
