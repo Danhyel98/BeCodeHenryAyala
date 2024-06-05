@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  height: 90vw;
+  max-width: 900px;
+  max-height: 900px;
+}
+body .main-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cove;
+}
