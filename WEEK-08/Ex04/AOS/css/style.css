@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+}
+
+#s1 {
+  background-color: #FF6347; /* Tomato */
+}
+
+#s2 {
+  background-color: #4682B4; /* SteelBlue */
+}
+
+#s3 {
+  background-color: #32CD32; /* LimeGreen */
+}
+
+#s4 {
+  background-color: #FFD700; /* Gold */
+}
