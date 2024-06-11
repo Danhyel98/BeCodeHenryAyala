@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper with Image Bullets</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    .container {
+      display: flex;
+      width: 100%;
+    }
+    .section1, .section2 {
+      width: 50%;
+    }
+    .swiper-pagination {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Adjust columns and size */
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px; /* Adjust gap between images */
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .swiper-pagination-bullet {
+      width: 50px; /* Explicit width */
+      height: 50px; /* Explicit height */
+      background-size: cover;
+      border-radius: 5px; /* Optional: rounded corners */
+    }
+    .swiper-pagination-bullet-active {
+      border: 2px solid #000; /* Highlight the active bullet */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section1">
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="section2">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><h1>Title1</h1></div>
+          <div class="swiper-slide"><h1>Title2</h1></div>
+          <div class="swiper-slide"><h1>Title3</h1></div>
+          <div class="swiper-slide"><h1>Title4</h1></div>
+          <div class="swiper-slide"><h1>Title5</h1></div>
+          <div class="swiper-slide"><h1>Title6</h1></div>
+          <div class="swiper-slide"><h1>Title7</h1></div>
+          <div class="swiper-slide"><h1>Title8</h1></div>
+          <div class="swiper-slide"><h1>Title9</h1></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const imageUrls = [
+        '/img/img1.png',
+        '/img/img2.png',
+        '/img/img3.png',
+        '/img/img4.png',
+        '/img/img5.png',
+        '/img/img6.png',
+        '/img/img7.png',
+        '/img/img8.png',
+        '/img/img9.png',
+      ];
+
+      const swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${className}" style="background-image:url(${imageUrls[index]});"></span>`;
+          },
+        },
+      });
+    });
+  </script>
+</body>
+</html>
