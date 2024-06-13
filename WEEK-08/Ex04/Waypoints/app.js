@@ -5,7 +5,7 @@ var waypoint = new Waypoint({
       alert('Are you sure ? Things are wild down there')
       }
     },
-    offset: '0%'
+    offset: '100%'
   })
 
   var waypoint2 = new Waypoint({
@@ -15,5 +15,5 @@ var waypoint = new Waypoint({
         alert('I told you')
       }
     }, 
-    offset : '100%'
+    offset : '0%'
   })
