@@ -9,8 +9,6 @@ const path = require('path');
 const jobRoutes = require('./routes/jobs');
 const cookieParser = require('cookie-parser');
 const errorHandler = require('./middleware/errorHandler');
-const cloudinaryRoutes = require('./cloudinary');
-const fileUpload = require('express-fileupload');
 
 
 const app = express();
@@ -19,11 +17,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(fileUpload({
-  createParentPath: true,
-  useTempFiles: true,
-  tempFileDir: '/tmp/'
-}));
+
 // Set EJS as the template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +38,6 @@ app.use('/', authRoutes);
 // Job routes
 app.use('/', jobRoutes);
 
-app.use('/', cloudinaryRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

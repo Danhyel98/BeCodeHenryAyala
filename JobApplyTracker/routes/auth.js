@@ -4,18 +4,12 @@ const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const auth = require('../middleware/auth');
-const uploadToCloudinary = require('../cloudinary');
-const fileUpload = require('express-fileupload');
+const { uploadToCloudinary, uploadFields } = require("../cloudinary");
 const router = express.Router();
-
-router.use(fileUpload({
-  useTempFiles: true,
-  tempFileDir: '/tmp/'
-}));
 
 
 // Register route with validation
-router.post('/register', [
+router.post('/register', uploadFields, [
   check('firstname', 'First name is required').not().isEmpty(),
   check('lastname', 'Last name is required').not().isEmpty(),
   check('email', 'Please include a valid email').isEmail(),
@@ -28,9 +22,7 @@ router.post('/register', [
 
   const { firstname, lastname, username, email, github, password } = req.body;
   
-  // Debugging
-  console.log('Request body:', req.body);
-  console.log('Files:', req.files);
+
 
   try {
     let user = await User.findOne({ email });
@@ -41,27 +33,27 @@ router.post('/register', [
     // Handle file uploads if files are provided
     let profilePictureUrl = '';
     let cvUrl = '';
-
-    if (req.files && req.files.profilePicture) {
-      try {
-        const result = await uploadToCloudinary(req.files.profilePicture.data, 'profile_pictures');
-        profilePictureUrl = result.secure_url;
-      } catch (uploadError) {
-        console.error('Error uploading profile picture:', uploadError.message);
-        return res.status(500).json({ msg: 'Error uploading profile picture' });
-      }
+    console.log(req.files);
+   
+    if (req.files["cv"]) {
+      const resultCV = await uploadToCloudinary(
+        "auto",
+        "jobapply-tracker/cv",
+        req.files["cv"][0]["buffer"]
+      );
+      console.log(resultCV);
+      cvUrl = resultCV.secure_url;
     }
 
-    if (req.files && req.files.cv) {
-      try {
-        const result = await uploadToCloudinary(req.files.cv.data, 'cvs');
-        cvUrl = result.secure_url;
-      } catch (uploadError) {
-        console.error('Error uploading CV:', uploadError.message);
-        return res.status(500).json({ msg: 'Error uploading CV' });
-      }
+    if (req.files["profilePicture"]) {
+      const resultProfilePicture = await uploadToCloudinary(
+        "auto",
+        "jobapply-tracker/profilePicture",
+        req.files["profilePicture"][0]["buffer"]
+      );
+      console.log(resultProfilePicture);
+      profilePictureUrl = resultProfilePicture.secure_url;
     }
-
     user = new User({
       firstname,
       lastname,
@@ -80,6 +72,8 @@ router.post('/register', [
     next(err); // Let error handling middleware take care of the response
   }
 });
+
+
 // Login route with validation
 router.post('/login', [
   check('email', 'Please include a valid email').isEmail(),

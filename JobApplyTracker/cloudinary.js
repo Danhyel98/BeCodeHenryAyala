@@ -1,23 +1,40 @@
-const cloudinary = require('cloudinary').v2;
-const streamifier = require('streamifier');
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const dotenv = require("dotenv");
+const { Readable } = require("stream");
+
+dotenv.config();
+
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
-
-const uploadToCloudinary = (fileBuffer, folder) => {
+const uploadToCloudinary = (resourceType, folderPath, buffer) => {
   return new Promise((resolve, reject) => {
-    const uploadStream = cloudinary.uploader.upload_stream(
-      { folder },
-      (error, result) => {
-        if (error) return reject(error);
+    const streamTransformer = cloudinary.uploader.upload_stream(
+      { resource_type: resourceType, folder: folderPath },
+      (err, result) => {
+        if (err) {
+          return reject(err);
+        }
         resolve(result);
       }
     );
-    streamifier.createReadStream(fileBuffer).pipe(uploadStream);
+    let str = Readable.from(buffer);
+    str.pipe(streamTransformer);
   });
 };
 
-module.exports = uploadToCloudinary;
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+const uploadFields = upload.fields([
+  { name: "cv", maxCount: 1 },
+  { name: "profilePicture", maxCount: 1 },
+]);
+
+module.exports = {
+  uploadFields,
+  uploadToCloudinary
+};
