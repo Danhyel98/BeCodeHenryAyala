@@ -83,4 +83,15 @@ router.patch('/:id', auth, async (req, res) => {
   }
 });
 
+// GET /dashboard - Render jobs view for the authenticated user
+router.get('/dashboard', auth, async (req, res) => {
+  try {
+    const jobs = await Job.find({ user: req.user.id });
+    res.render('jobs', { jobs, user: req.user });
+  } catch (err) {
+    console.error('Error fetching jobs:', err.message);
+    res.status(500).json({ msg: 'Server error while fetching jobs' });
+  }
+});
+
   module.exports = router;

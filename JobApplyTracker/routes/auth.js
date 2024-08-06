@@ -30,7 +30,7 @@ router.post('/register', uploadFields, [
       return res.status(400).json({ msg: 'User already exists' });
     }
 
-    // Handle file uploads if files are provided
+    // Handle file uploads
     let profilePictureUrl = '';
     let cvUrl = '';
     console.log(req.files);
@@ -69,7 +69,7 @@ router.post('/register', uploadFields, [
     res.status(201).json({ msg: 'User registered successfully' });
   } catch (err) {
     console.error('Error during registration:', err.message);
-    next(err); // Let error handling middleware take care of the response
+    next(err); 
   }
 });
 
