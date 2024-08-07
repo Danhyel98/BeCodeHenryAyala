@@ -1,3 +1,126 @@
-div {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    height: 100vh;
+    color: #BFA181;
+    @extend .poppins-medium;
+    li {
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #BFA181;
+    }
+    background-color: #0A1828;
+    #logo{
+        width: 300px;
+    }
+    .head-nav{
+        #logo-title {
+            color: #178582;
+        }
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid white;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+   .container{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+   }
+    #login-title{
+        text-align: center;
+        color: #0A1828;
+    }
+    .login-form{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        min-height: 290px;
+        width: 300px;
+        background-color: #BFA181;
+        border-radius: 5px 5px;
+        padding-top: 40px;
+        #form-Login{
+            input{
+                width: 90%;
+                border-radius: 5px 5px 5px 5px;
+                border: 1px solid black;
+                margin-bottom: 5px;
+            }
+            label {
+                display: flex;
+                width: 100%;
+                justify-content: left;
+                padding-left: 20px;
+                color: #0A1828;
+                padding-bottom: 5px;
+            }
+            button {
+                width: 90%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                background-color:  #0A1828;
+                color: #BFA181;
+                border-radius: 5px 5px 5px 5px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+      
+    }
+
+    footer {
+        text-align: center;
+        height: auto;
+    }
+
 }

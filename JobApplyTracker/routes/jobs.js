@@ -85,9 +85,26 @@ router.patch('/:id', auth, async (req, res) => {
 
 // GET /dashboard - Render jobs view for the authenticated user
 router.get('/dashboard', auth, async (req, res) => {
+  const { status, startDate, endDate } = req.query;
+
+  let filter = { user: req.user.id };
+
+  if (status) {
+    filter.status = status;
+  }
+
+  if (startDate || endDate) {
+    filter.createdAt = {};
+    if (startDate) filter.createdAt.$gte = new Date(startDate);
+    if (endDate) filter.createdAt.$lte = new Date(endDate);
+  }
+
   try {
-    const jobs = await Job.find({ user: req.user.id });
-    res.render('jobs', { jobs, user: req.user });
+    const jobs = await Job.find(filter);
+    if (jobs.length === 0) {
+      return res.render('dashboard', { jobs: [] });
+    }
+    res.render('dashboard', { jobs });
   } catch (err) {
     console.error('Error fetching jobs:', err.message);
     res.status(500).json({ msg: 'Server error while fetching jobs' });
@@ -95,3 +112,5 @@ router.get('/dashboard', auth, async (req, res) => {
 });
 
   module.exports = router;
+
+  

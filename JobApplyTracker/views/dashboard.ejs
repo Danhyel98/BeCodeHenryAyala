@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="head-nav">
+    <h1><a href="/dashboard">JobApplyTracker</a></h1>
+    <% if (user) { %>
+      <div class="user-info">
+        <p><%= user.firstname %> <%= user.lastname %></p>
+        <img src="<%= user.profilePicture %>" alt="Profile Picture" width="50" height="50">
+        <a href="/profile">My Profile</a>
+      </div>
+    <% } %>
+  </div>
+
+  <h2>Jobs Dashboard</h2>
+
+  <form action="/dashboard" method="get">
+    <label for="status">Filter by status:</label>
+    <select id="status" name="status">
+      <option value="">All</option>
+      <option value="Interested">Interested</option>
+      <option value="CV sent">CV sent</option>
+      <option value="Negative">Negative</option>
+      <option value="Interview">Interview</option>
+    </select>
+    <button type="submit">Filter</button>
+  </form>
+
+  <ul>
+    <% if (jobs && jobs.length > 0) { %>
+      <% jobs.forEach(job => { %>
+        <li>
+          <strong>Title:</strong> <%= job.title %><br>
+          <strong>Website:</strong> <%= job.website %><br>
+          <strong>Status:</strong> <%= job.status %><br>
+          <strong>Comments:</strong> <%= job.comments %><br>
+          <strong>Created At:</strong> <%= job.createdAt.toDateString() %><br>
+        </li>
+      <% }) %>
+    <% } else { %>
+      <p>No jobs found</p>
+    <% } %>
+  </ul>
+</body>
+</html>

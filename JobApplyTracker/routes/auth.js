@@ -75,12 +75,14 @@ router.post('/register', uploadFields, [
 
 
 // Login route with validation
+
 router.post('/login', [
   check('email', 'Please include a valid email').isEmail(),
   check('password', 'Password is required').exists()
 ], async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.log('Validation errors:', errors.array()); // Log validation errors
     return res.status(400).json({ errors: errors.array() });
   }
 
@@ -88,31 +90,44 @@ router.post('/login', [
   try {
     const user = await User.findOne({ email });
     if (!user) {
+      console.log('User not found'); // Log if user is not found
       return res.status(400).json({ msg: 'Invalid email or password' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      console.log('Password mismatch'); // Log if password does not match
       return res.status(400).json({ msg: 'Invalid email or password' });
     }
 
     const payload = { user: { id: user.id } };
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
-      if (err) return next(err);
+      if (err) {
+        console.log('JWT sign error:', err); // Log JWT signing error
+        return next(err);
+      }
 
-      // Only set the cookie if login is successful
       res.cookie('token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         maxAge: 3600000, // 1 hour
       });
-      res.json({ token });
+      res.json({ msg: 'Login successful' });
     });
   } catch (err) {
+    console.log('Server error:', err); // Log server errors
     next(err);
   }
 });
 
+//To go to the page login
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+//to go to the page dasboard
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
 // Change password
 router.put('/password', auth, async (req, res) => {
   const { currentPassword, newPassword } = req.body;
@@ -156,5 +171,7 @@ router.get('/profile', auth, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+
+
 
 module.exports = router;
