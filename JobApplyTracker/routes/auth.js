@@ -121,6 +121,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+
 //To go to the page login
 router.get('/login', (req, res) => {
   res.render('login');
