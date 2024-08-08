@@ -4,7 +4,7 @@ const auth = require('../middleware/auth');
 const Job = require('../models/Job');
 const router = express.Router();
 
-// GET /dashboard - Fetch jobs for the authenticated user
+// GET /dashboard - Render the dashboard page with jobs data
 router.get('/dashboard', auth, async (req, res) => {
   try {
     if (!req.user || !req.user.id) {
@@ -12,10 +12,12 @@ router.get('/dashboard', auth, async (req, res) => {
     }
     
     const jobs = await Job.find({ user: req.user.id }); // Use req.user.id to find jobs
-    res.json(jobs);
+
+    // Render the ejs page with the jobs data
+    res.render('dashboard', { jobs });
   } catch (err) {
     console.error('Error fetching jobs:', err.message);
-    res.status(500).json({ msg: 'Server error' });
+    res.status(500).send('Server error');
   }
 });
 

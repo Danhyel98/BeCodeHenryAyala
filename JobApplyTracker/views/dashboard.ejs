@@ -1,52 +1,52 @@
 <%- include('partials/header'); -%>
 
 <body>
-  <h2>Your Jobs Annonces here :</h2>
-  <ul id="jobs-list">
-    <!-- Jobs will be dynamically loaded here -->
-  </ul>
+  <h2 id="job-annonces-title">Your Jobs Announcements here:</h2>
+  <div class="container">
+    <div id="job-container">
+      <ul id="jobs-list">
+        <% if (jobs && jobs.length > 0) { %>
+          <% jobs.forEach(job => { %>
+            <li>
+              <h3><%= job.title %></h3>
+              <p>Name: <%= job.contactName %></p>
+              <a href="/jobs/<%= job._id %>" class="see-more-link">See More</a>
+            </li>
+          <% }) %>
+        <% } else { %>
+          <p>No jobs found.</p>
+        <% } %>
+      </ul>
+    </div>
+  </div>
 </body>
 
 <%- include('partials/footer'); -%>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  // Remove the token retrieval from localStorage since it's stored in an HTTP-only cookie
-  // No need to handle it manually here
 
-  fetch('/dashboard', { // Adjusted endpoint to match server route
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include' // Ensure cookies (including the HTTP-only token) are sent with the request
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok: ' + response.statusText);
-    }
-    return response.json();
-  })
-  .then(jobs => {
-    console.log('Jobs data:', JSON.stringify(jobs, null, 2)); // Debug log
-    const jobsList = document.getElementById('jobs-list');
-    if (jobs.length > 0) {
-      jobs.forEach(job => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <h3>${job.title}</h3>
-          <p>${job.description}</p>
-        `;
-        jobsList.appendChild(li);
-      });
-    } else {
-      jobsList.innerHTML = '<p>No jobs found.</p>';
-    }
-  })
-  .catch(error => {
-    console.error('Error fetching jobs:', error); // Detailed error logging
-    document.getElementById('jobs-list').innerHTML = '<p>Error loading jobs.</p>';
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/dashboard', { // Ensure this matches the route defined in backend
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include' // Ensure cookies are sent with the request
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.statusText);
+      }
+      return response.text(); // Change to text to handle server-rendered HTML
+    })
+    .then(html => {
+      console.log('HTML response:', html); // Debug log for server response
+      document.body.innerHTML = html; // Replace the entire body with the HTML response
+    })
+    .catch(error => {
+      console.error('Error fetching jobs:', error); // Detailed error logging
+      document.getElementById('jobs-list').innerHTML = '<p>Error loading jobs.</p>';
+    });
   });
-});
 
 </script>

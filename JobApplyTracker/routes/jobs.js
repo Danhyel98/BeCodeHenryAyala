@@ -83,6 +83,8 @@ router.patch('/:id', auth, async (req, res) => {
   }
 });
 
+
+
 // GET /dashboard - Render jobs view for the authenticated user
 /*router.get('/dashboard', auth, async (req, res) => {
   const { status, startDate, endDate } = req.query;
