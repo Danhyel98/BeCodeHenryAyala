@@ -76,47 +76,48 @@ router.post('/register', uploadFields, [
 
 // Login route with validation
 
-router.post('/login', [
-  check('email', 'Please include a valid email').isEmail(),
-  check('password', 'Password is required').exists()
-], async (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    console.log('Validation errors:', errors.array()); // Log validation errors
-    return res.status(400).json({ errors: errors.array() });
-  }
-
+router.post('/login', async (req, res) => {
   const { email, password } = req.body;
+
   try {
-    const user = await User.findOne({ email });
+    // Find user by email
+    let user = await User.findOne({ email });
     if (!user) {
-      console.log('User not found'); // Log if user is not found
-      return res.status(400).json({ msg: 'Invalid email or password' });
+      return res.status(400).json({ msg: 'Invalid Credentials' });
     }
 
+    // Check if the password matches
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      console.log('Password mismatch'); // Log if password does not match
-      return res.status(400).json({ msg: 'Invalid email or password' });
+      return res.status(400).json({ msg: 'Invalid Credentials' });
     }
 
-    const payload = { user: { id: user.id } };
-    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
-      if (err) {
-        console.log('JWT sign error:', err); // Log JWT signing error
-        return next(err);
-      }
+    // Create a JWT payload
+    const payload = {
+      id: user.id
+    };
 
-      res.cookie('token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 3600000, // 1 hour
-      });
-      res.json({ msg: 'Login successful' });
-    });
+    // Sign the token
+    jwt.sign(
+      payload,
+      'henryjobapp', // This should be an environment variable in production
+      { expiresIn: '1h' },
+      (err, token) => {
+        if (err) throw err;
+
+        // Set the token in a cookie
+        res.cookie('token', token, {
+          httpOnly: true, // Secure flag should be used in production for HTTPS
+          secure: process.env.NODE_ENV === 'production',
+          maxAge: 3600000 // 1 hour
+        });
+
+        res.status(200).json({ msg: 'Login successful' });
+      }
+    );
   } catch (err) {
-    console.log('Server error:', err); // Log server errors
-    next(err);
+    console.error(err.message);
+    res.status(500).send('Server Error');
   }
 });
 
@@ -124,10 +125,7 @@ router.post('/login', [
 router.get('/login', (req, res) => {
   res.render('login');
 });
-//to go to the page dasboard
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
-});
+
 // Change password
 router.put('/password', auth, async (req, res) => {
   const { currentPassword, newPassword } = req.body;

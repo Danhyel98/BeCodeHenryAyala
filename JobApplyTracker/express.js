@@ -28,9 +28,9 @@ mongoose.connect(process.env.MONGO_URI);
 
 
 // Home route to render home.ejs
-app.get('/', (req, res) => {
-  res.render('home');
-});
+// app.get('/', (req, res) => {
+//   res.render('dashboard');
+// });
 
 
 // Auth routes
