@@ -37,7 +37,8 @@ mongoose.connect(process.env.MONGO_URI);
 app.use('/', authRoutes);
 
 // Job routes
-app.use('/', jobRoutes);
+app.use('/jobs', jobRoutes); // Use the job routes
+
 
 app.use('/', dashboardRoutes);
 

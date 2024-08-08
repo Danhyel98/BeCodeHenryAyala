@@ -82,7 +82,23 @@ router.patch('/:id', auth, async (req, res) => {
     res.status(500).json({ msg: 'Server error while updating job' });
   }
 });
+// Route to get job details by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const jobId = req.params.id;
+    const job = await Job.findById(jobId);
 
+    if (!job) {
+      return res.status(404).send('Job not found');
+    }
+
+    // Render a detailed view for the job
+    res.render('job-detail', { job }); // Ensure you have a 'job-detail.ejs' view
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+});
 
 
 // GET /dashboard - Render jobs view for the authenticated user

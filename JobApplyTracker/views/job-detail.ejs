@@ -1,0 +1,19 @@
+<%- include('partials/header'); -%>
+
+<body>
+  <div class="container">
+    <div id="job-detail">
+      <h1><%= job.title %></h1>
+      <p>Website: <a href="<%= job.website %>"><%= job.website %></a></p>
+      <p>Name: <%= job.contactName %></p>
+      <p>Email: <%= job.contactEmail %></p>
+      <p>Phone: <%= job.contactPhone %></p>
+      <p>Address: <%= job.address %></p>
+      <p>Origin: <%= job.origin %></p>
+      <p>Status: <%= job.status %></p>
+      <p>Comments: <%= job.comments %></p>
+    </div>
+  </div>
+</body>
+
+<%- include('partials/footer'); -%>
