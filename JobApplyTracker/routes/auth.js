@@ -21,8 +21,6 @@ router.post('/register', uploadFields, [
   }
 
   const { firstname, lastname, username, email, github, password } = req.body;
-  
-
 
   try {
     let user = await User.findOne({ email });
@@ -34,7 +32,7 @@ router.post('/register', uploadFields, [
     let profilePictureUrl = '';
     let cvUrl = '';
     console.log(req.files);
-   
+
     if (req.files["cv"]) {
       const resultCV = await uploadToCloudinary(
         "auto",
@@ -54,25 +52,46 @@ router.post('/register', uploadFields, [
       console.log(resultProfilePicture);
       profilePictureUrl = resultProfilePicture.secure_url;
     }
+
     user = new User({
       firstname,
       lastname,
       username,
       email,
-      github,
+      github, // Handle GitHub field
       profilePicture: profilePictureUrl,
       cv: cvUrl,
       password: await bcrypt.hash(password, 10),
     });
 
     await user.save();
-    res.status(201).json({ msg: 'User registered successfully' });
+
+    // Automatically log in the user after registration
+    const payload = { id: user.id };
+    jwt.sign(
+      payload,
+      'henryjobapp', // Use environment variable in production
+      { expiresIn: '1h' },
+      (err, token) => {
+        if (err) throw err;
+
+        // Set the token in a cookie
+        res.cookie('token', token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          maxAge: 3600000 // 1 hour
+        });
+
+        // Redirect to dashboard
+        res.redirect('/dashboard');
+      }
+    );
+
   } catch (err) {
     console.error('Error during registration:', err.message);
-    next(err); 
+    next(err);
   }
 });
-
 // Register page
 router.get('/register', (req, res) => {
   res.render('register');
