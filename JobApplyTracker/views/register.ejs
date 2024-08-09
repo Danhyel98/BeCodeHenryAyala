@@ -1,0 +1,40 @@
+<%- include('partials/header'); %>
+
+<body>
+    <div class="container">
+        <div class="register-form">
+            <h1 id="register-title">Register</h1>
+            <form id="form-register" action="/register" method="POST" enctype="multipart/form-data">
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" id="firstname" required>
+                <br>
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname" id="lastname" required>
+                <br>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <br>
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" name="profilePicture" id="profilePicture">
+                <br>
+                <label for="cv">CV:</label>
+                <input type="file" name="cv" id="cv">
+                <br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Handle form submission with JavaScript if needed
+        // Documented above in the login script
+    </script>
+</body>
+
+<%- include('partials/footer'); %>

@@ -73,7 +73,10 @@ router.post('/register', uploadFields, [
   }
 });
 
-
+// Register page
+router.get('/register', (req, res) => {
+  res.render('register');
+});
 
 // Login route with validation
 router.post('/login', async (req, res) => {
