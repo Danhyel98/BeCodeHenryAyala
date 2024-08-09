@@ -1,15 +1,19 @@
 <%- include('partials/header'); -%>
-
-<header>
-  <div class="smoothie">
-    <img src="/smoothie.png" alt="">
-  </div>
-  <div class="headings">
-    <h2>Smoothie Recipes</h2>
-    <h3>By Ninjas For Ninjas</h3>
-    <a href="/smoothies" class="btn">View Recipes</a>
-  </div>
-</header>
-
-
+<body>
+    <h1>Profile</h1>
+    <div class="container">
+        <div class="profile-info">
+            <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-picture">
+            <p><strong>First Name:</strong> <%= user.firstname %></p>
+            <p><strong>Last Name:</strong> <%= user.lastname %></p>
+            <p><strong>Username:</strong> <%= user.username %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <p><strong>GitHub:</strong> <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
+            <p><strong>CV:</strong> <a href="<%= user.cv %>" target="_blank">Download CV</a></p>
+        </div>
+        <div class="actions">
+            <a href="/dashboard">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
 <%- include('partials/footer'); -%>
