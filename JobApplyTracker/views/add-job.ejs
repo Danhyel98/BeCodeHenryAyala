@@ -1,0 +1,45 @@
+<%- include('partials/header'); -%>
+
+<body>
+  <h1>Add a New Job</h1>
+  <form action="/jobs" method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" required>
+    </div>
+    <div>
+      <label for="contactName">Contact Name:</label>
+      <input type="text" id="contactName" name="contactName">
+    </div>
+    <div>
+      <label for="contactEmail">Contact Email:</label>
+      <input type="email" id="contactEmail" name="contactEmail">
+    </div>
+    <div>
+      <label for="contactPhone">Contact Phone:</label>
+      <input type="tel" id="contactPhone" name="contactPhone">
+    </div>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address">
+    </div>
+    <div>
+      <label for="origin">Origin:</label>
+      <input type="text" id="origin" name="origin" required>
+    </div>
+    <div>
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status" required>
+    </div>
+    <div>
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments"></textarea>
+    </div>
+    <button type="submit">Add Job</button>
+  </form>
+</body>
+<%- include('partials/footer'); -%>

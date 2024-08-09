@@ -41,6 +41,7 @@ mongoose.connect(process.env.MONGO_URI);
 //   res.render('dashboard');
 // });
 
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded data
 
 // Auth routes
 app.use('/', authRoutes);

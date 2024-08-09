@@ -4,11 +4,18 @@ const auth = require('../middleware/auth');
 const Job = require('../models/Job');
 const router = express.Router();
 
-// POST /jobs - Create a new job
+// GET /add-job - Render the form to add a new job
+router.get('/add-job', auth, (req, res) => {
+  res.render('add-job'); // Ensure you have an 'add-job.ejs' file in your views directory
+});
+
+//create job
 router.post('/jobs', auth, async (req, res) => {
+  console.log('Received POST request to /jobs');
+  console.log('Request Body:', req.body);
+
   const { title, website, contactName, contactEmail, contactPhone, address, origin, status, comments } = req.body;
-  
-  // Validate required fields
+
   if (!title || !website || !origin || !status) {
     let errors = [];
     if (!title) errors.push('Title is required');
@@ -16,6 +23,7 @@ router.post('/jobs', auth, async (req, res) => {
     if (!origin) errors.push('Origin is required');
     if (!status) errors.push('Status is required');
     
+    console.log('Validation Errors:', errors);
     return res.status(400).json({ errors });
   }
 
@@ -33,12 +41,16 @@ router.post('/jobs', auth, async (req, res) => {
       comments,
     });
     const job = await newJob.save();
-    res.status(201).json(job); // 201 Created
+    console.log('Job Created:', job);
+    res.redirect('/dashboard'); // Redirect to dashboard after successful creation
   } catch (err) {
     console.error('Error creating job:', err.message);
     res.status(500).json({ msg: 'Server error while creating job' });
   }
 });
+
+
+
 
 // GET /jobs - Fetch all jobs for the authenticated user
 router.get('/jobs', auth, async (req, res) => {
