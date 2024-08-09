@@ -153,11 +153,24 @@ router.put('/password', auth, async (req, res) => {
 });
 
 // Logout route
-router.post('/logout', (req, res) => {
-  res.clearCookie('token');
-  res.json({ msg: 'Logged out successfully' });
-});
+router.get('/logout', (req, res) => {
+  if (req.session) {
+    req.session.destroy(err => {
+      if (err) {
+        console.error('Error destroying session:', err);
+        return res.status(500).json({ msg: 'Failed to log out.' });
+      }
 
+      // Clear the cookie if needed
+      res.clearCookie('token'); // Replace 'connect.sid' with your session cookie name if different
+
+      // Redirect to the login page
+      res.redirect('/login');
+    });
+  } else {
+    res.redirect('/login'); // Redirect if there's no session to destroy
+  }
+});
 // Get profile route
 router.get('/profile', auth, async (req, res) => {
   try {
