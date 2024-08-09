@@ -74,21 +74,26 @@ router.post('/register', uploadFields, [
 });
 
 
-// Login route with validation
 
+// Login route with validation
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
+
+  console.log('Received login request');
+  console.log('Request Body:', req.body);
 
   try {
     // Find user by email
     let user = await User.findOne({ email });
     if (!user) {
+      console.log('User not found');
       return res.status(400).json({ msg: 'Invalid Credentials' });
     }
 
     // Check if the password matches
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      console.log('Password mismatch');
       return res.status(400).json({ msg: 'Invalid Credentials' });
     }
 
@@ -112,16 +117,22 @@ router.post('/login', async (req, res) => {
           maxAge: 3600000 // 1 hour
         });
 
+        // Save the user session
+        req.session.user = {
+          id: user.id,
+          email: user.email,
+          // Add any other user details you need
+        };
+
+        console.log('Login successful, session created:', req.session.user);
         res.status(200).json({ msg: 'Login successful' });
       }
     );
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
+    console.error('Error during login:', err.message);
+    res.status(500).json({ msg: 'Server Error' });
   }
 });
-
-
 
 //To go to the page login
 router.get('/login', (req, res) => {

@@ -15,6 +15,8 @@ const session = require('express-session');
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true })); // For parsing form data
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -22,7 +24,7 @@ app.use(cookieParser());
 app.use(session({
   secret: 'henryjobapp', // Replace with a secure secret key
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false, // Don't save uninitialized sessions
   cookie: { secure: false } // Set 'secure: true' if using HTTPS
 }));
 
@@ -31,6 +33,24 @@ app.use(session({
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Root route: Redirect based on authentication status
+app.get('/', (req, res) => {
+  console.log('Root route accessed');
+  console.log('Session data:', req.session);
+
+  if (req.session && req.session.user) {
+    // If authenticated, redirect to dashboard
+    console.log('User is authenticated, redirecting to /dashboard');
+    res.redirect('/dashboard');
+  } else {
+    // If not authenticated, redirect to login
+    console.log('User is not authenticated, redirecting to /login');
+    res.redirect('/login');
+  }
+});
+
+
 
 
 mongoose.connect(process.env.MONGO_URI);
@@ -50,7 +70,7 @@ app.use('/', authRoutes);
 app.use('/jobs', jobRoutes); // Use the job routes
 
 
-app.use('/', dashboardRoutes);  
+app.use('/', require('./routes/dashboard')); // Dashboard-related routes
 
 // Error handling middleware
 app.use((err, req, res, next) => {
