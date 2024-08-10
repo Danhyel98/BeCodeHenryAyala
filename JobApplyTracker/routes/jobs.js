@@ -1,4 +1,3 @@
-// create/jobs.js
 const express = require('express');
 const auth = require('../middleware/auth');
 const Job = require('../models/Job');
@@ -10,7 +9,7 @@ router.get('/add-job', auth, (req, res) => {
 });
 
 //create job
-router.post('/jobs', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
   console.log('Received POST request to /jobs');
   console.log('Request Body:', req.body);
 
