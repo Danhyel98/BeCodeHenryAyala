@@ -320,11 +320,24 @@ button#btn-addjob {
 
 
 }
+h1#register-title {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.container-register {
+    display: flex;
+    justify-content: center;
+    input{
+        width: 100%;
+    }
+}
 .container-profile {
     display: flex;
     justify-content: center;
+    gap: 20px;
     img.profile-picture {
-        width: 500px;
+        max-width: 300px;
         /* height: 300; */
     }
 }
@@ -385,6 +398,8 @@ h1#edit-title-job {
     justify-content: center;
     input {
         width: 100%;
+        border: none;
+        border-radius: 5px;
     }
     hr#first-hr {
         margin: 20px 0;
@@ -395,6 +410,20 @@ h1#edit-title-job {
     legend#info-employer {
         margin-bottom: 15px;
     }
+}
+#btn-register{
+    width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 div#job-container {
     max-width: 900px;
