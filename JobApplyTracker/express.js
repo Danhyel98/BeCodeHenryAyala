@@ -12,6 +12,17 @@ const errorHandler = require('./middleware/errorHandler');
 const dashboardRoutes = require('./routes/dashboard');
 const app = express();
 const session = require('express-session');
+const multer = require('multer');
+
+// Set up Multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
 
 app.use(cors());
 app.use(bodyParser.json());

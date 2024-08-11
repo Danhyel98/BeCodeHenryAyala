@@ -95,41 +95,77 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+ 
 }
 
 #job-container {
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping of job entries */
-    gap: 15px; /* Space between job entries */
+    flex-wrap: wrap; 
+    gap: 15px; 
 }
 
 #jobs-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Space between job entries */
+    gap: 15px; 
 }
 
 #jobs-list li {
-    background-color: #ffffff; /* White background for each job entry */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Padding inside each job entry */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-    list-style-type: none; /* Remove default list styling */
-    flex: 1 1 300px; /* Flex-grow, flex-shrink, and flex-basis to handle item sizing */
-    max-width: 100%; /* Ensure items do not exceed container width */
+    background-color: #ffffff; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 15px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    list-style-type: none; 
+    flex: 1 1 300px; 
+    max-width: 100%; 
 }
 
 .see-more-link {
-    color: #007bff; /* Blue color for links */
-    font-weight: bold; /* Make the link text bold */
-    text-decoration: none; /* Remove underline from link */
+    color: #007bff; 
+    font-weight: bold; 
+    text-decoration: none;
 }
 
 .see-more-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
+
+
+.login-form {
+    background: #178582;
+    padding: 40px;
+    border: 1px solid white;
+    border-radius: 5px 5px 5px 5px;
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+    input#email {
+        width: 100%;
+        border-radius: 5px 5px 5px 5px;
+        border: none;
+    }
+    input#password {
+        width: 100%;
+        border-radius: 5px 5px 5px 5px;
+        border: none;
+    }
+    button#login_button {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+        background-color: #BFA181;
+        color: white;
+        border-radius: 5px 5px 5px 5px;
+        border: none;
+    }
+}
+
+
+
 }
 footer {
     text-align: center;

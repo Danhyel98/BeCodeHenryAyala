@@ -11,8 +11,32 @@
             <p><strong>GitHub:</strong> <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
             <p><strong>CV:</strong> <a href="<%= user.cv %>" target="_blank">Download CV</a></p>
         </div>
+        
         <div class="actions">
             <a href="/dashboard">Back to Dashboard</a>
+        </div>
+
+        <div class="update-forms">
+            <!-- Form to upload a new CV -->
+            <h2>Update CV</h2>
+            <form action="/profile/update-cv" method="POST" enctype="multipart/form-data">
+                <input type="file" name="cv" required>
+                <button type="submit">Upload New CV</button>
+            </form>
+
+            <!-- Form to change the password -->
+            <h2>Change Password</h2>
+            <form action="/profile/change-password" method="POST">
+                <div>
+                    <label for="currentPassword">Current Password:</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                </div>
+                <div>
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <button type="submit">Change Password</button>
+            </form>
         </div>
     </div>
 </body>
