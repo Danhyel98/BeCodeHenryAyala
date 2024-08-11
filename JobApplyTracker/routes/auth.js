@@ -242,19 +242,20 @@ router.get('/profile', auth, async (req, res) => {
 router.post('/profile/update-cv', auth, upload.single('cv'), async (req, res) => {
   try {
       const user = await User.findById(req.user.id);
-
       if (!user) {
           return res.status(404).json({ msg: 'User not found' });
       }
 
-      // Update the user's CV field with the new file path
-      user.cv = `/uploads/cv/${req.file.filename}`;
-      await user.save();
+      if (req.file) {
+          // If a file was uploaded, update the user's CV URL
+          user.cv = `/uploads/cv/${req.file.filename}`;
+          await user.save();
+      }
 
-      // Redirect to the profile page
-      res.redirect('/profile');
+      // Redirect to profile page with success message
+      res.redirect('/profile?success=cv');
   } catch (err) {
-      console.error('Error updating CV:', err.message);
+      console.error('Error uploading CV:', err.message);
       res.status(500).send('Server error');
   }
 });

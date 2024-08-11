@@ -30,5 +30,13 @@
     <div class="actions-profile">
         <a href="/dashboard" class="btn btn-back">Back to Dashboard</a>
     </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success')) {
+            if (urlParams.get('success') === 'cv') {
+                alert('CV uploaded successfully!');
+            }
+        }
+    </script>
 </body>
 <%- include('partials/footer'); -%>
