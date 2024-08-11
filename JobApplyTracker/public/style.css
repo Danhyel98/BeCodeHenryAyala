@@ -249,6 +249,14 @@ body .actions-profile {
   justify-content: center;
   margin-top: 30px;
 }
+body h1#edit-title-job {
+  display: flex;
+  justify-content: center;
+}
+body .container-job-edit {
+  display: flex;
+  justify-content: center;
+}
 
 footer {
   text-align: center;

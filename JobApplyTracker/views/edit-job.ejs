@@ -1,10 +1,10 @@
 <%- include('partials/header'); -%>
 
 <body>
+  <h1 id="edit-title-job">Edit Job : <%= job.title %> </h1>
+
   <div class="container-job-edit">
-    <h1>Edit Job</h1>
-    <form action="/jobs/edit/<%= job._id %>" method="POST">
-      <fieldset>
+    <form action="/jobs/edit/<%= job._id %>" method="POST" id="edit-form">
         <legend>Job Details</legend>
         <div class="form-group">
           <label for="title">Title:</label>
@@ -31,9 +31,7 @@
             <option value="Interview" <%= job.status === 'Interview' ? 'selected' : '' %>>Interview</option>
           </select>
         </div>
-      </fieldset>
 
-      <fieldset>
         <legend>Contact Information</legend>
         <div class="form-group">
           <label for="contactName">Contact Name:</label>
@@ -51,15 +49,12 @@
           <label for="address">Address:</label>
           <input type="text" id="address" name="address" value="<%= job.address %>">
         </div>
-      </fieldset>
 
-      <fieldset>
         <legend>Additional Information</legend>
         <div class="form-group">
           <label for="comments">Comments:</label>
           <textarea id="comments" name="comments" rows="4"><%= job.comments %></textarea>
         </div>
-      </fieldset>
 
       <button type="submit">Update Job</button>
     </form>
