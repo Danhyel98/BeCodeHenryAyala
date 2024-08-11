@@ -98,6 +98,12 @@ nav {
  
 }
 
+.container-of-jobs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
 #job-container {
     padding: 20px;
     display: flex;
@@ -164,6 +170,9 @@ nav {
     }
 }
 
+h2#job-annonces-title {
+    margin-top: 40px;
+}
 
 
 }
