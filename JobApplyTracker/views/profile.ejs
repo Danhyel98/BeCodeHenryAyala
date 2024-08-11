@@ -11,18 +11,19 @@
             <p><strong>Full name:</strong> <%= user.firstname %> <%= user.lastname %></p>
             <p><strong>Email:</strong> <%= user.email %></p>
             <p><strong>GitHub:</strong> <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
-            
-            <button class="btn btn-download">Download CV</button>
+            <!-- Button to download a new CV -->
+            <a href="<%= user.cv %>" class="btn btn-download" download>Download CV</a>
 
-            <!-- Button to upload a new CV -->
-            <form action="/profile/update-cv" method="POST" enctype="multipart/form-data">
-                <button type="submit" class="btn btn-update">Upload New CV</button>
-            </form>
+           <!-- Form to upload a new CV -->
+           <form action="/profile/update-cv" method="POST" enctype="multipart/form-data">
+            <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+            <button type="submit" class="btn btn-update">Upload New CV</button>
+        </form>
 
             <!-- Button to change the password -->
             <form action="/profile/change-password" method="POST">
-<!-- Button to change the password -->
-<a href="/profile/change-password" class="btn btn-update">Change Password</a>
+            <!-- Button to change the password -->
+            <a href="/profile/change-password" class="btn btn-update">Change Password</a>
             </form>
         </div>
     </div>

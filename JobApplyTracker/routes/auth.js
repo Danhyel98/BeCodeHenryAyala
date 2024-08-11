@@ -6,6 +6,7 @@ const User = require('../models/User');
 const auth = require('../middleware/auth'); // Ensure this middleware handles authentication
 const { uploadToCloudinary, uploadFields } = require("../cloudinary");
 const router = express.Router();
+const upload = require('../middleware/multerConfig'); // Assuming multerConfig is where multer setup is
 
 // Register route with validation
 router.post('/register', uploadFields, [
@@ -234,6 +235,27 @@ router.get('/profile', auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server error');
+  }
+});
+
+// Route to handle CV upload
+router.post('/profile/update-cv', auth, upload.single('cv'), async (req, res) => {
+  try {
+      const user = await User.findById(req.user.id);
+
+      if (!user) {
+          return res.status(404).json({ msg: 'User not found' });
+      }
+
+      // Update the user's CV field with the new file path
+      user.cv = `/uploads/cv/${req.file.filename}`;
+      await user.save();
+
+      // Redirect to the profile page
+      res.redirect('/profile');
+  } catch (err) {
+      console.error('Error updating CV:', err.message);
+      res.status(500).send('Server error');
   }
 });
 
