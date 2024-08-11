@@ -188,6 +188,82 @@ body .container-job-detail hr#sec-hr {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+body h1#change-password-title {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+body button#btn-addjob {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body .container-changepass {
+  display: flex;
+  justify-content: center;
+}
+body .container-changepass form#form-changepass {
+  max-width: 400px;
+}
+body .container-changepass form#form-changepass #btn-changepass {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body .container-changepass input {
+  width: 100%;
+}
+body .head-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #BFA181;
+}
+body nav {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+body nav li {
+  display: inline;
+}
+body nav li a {
+  text-decoration: none;
+  color: #BFA181;
+  font-size: 16px;
+  font-weight: 500;
+}
+body .profile-link {
+  display: flex;
+  align-items: center;
+}
+body .profile-img {
+  width: 35px; /* Adjust as needed */
+  height: 35px; /* Adjust as needed */
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+body #logo {
+  height: 50px;
+}
+body #logo-link {
+  display: inline-block;
+}
 body .container-job-dets {
   display: flex;
   justify-content: center;

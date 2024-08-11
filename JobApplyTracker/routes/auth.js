@@ -162,8 +162,12 @@ router.get('/login', (req, res) => {
 });
 
 // Change password
-router.put('/password', auth, async (req, res) => {
-  const { currentPassword, newPassword } = req.body;
+router.get('/profile/change-password', auth, (req, res) => {
+  res.render('change-password', { user: req.session.user });
+});
+// Route to handle password change
+router.post('/profile/change-password', auth, async (req, res) => {
+  const { currentPassword, newPassword, confirmPassword } = req.body;
 
   try {
     const user = await User.findById(req.user.id);
@@ -171,19 +175,35 @@ router.put('/password', auth, async (req, res) => {
       return res.status(404).json({ msg: 'User not found' });
     }
 
+    // Check if the current password is correct
     const isMatch = await bcrypt.compare(currentPassword, user.password);
     if (!isMatch) {
       return res.status(400).json({ msg: 'Invalid current password' });
     }
 
-    user.password = await bcrypt.hash(newPassword, 10);
+    // Check if the new passwords match
+    if (newPassword !== confirmPassword) {
+      return res.status(400).json({ msg: 'New passwords do not match' });
+    }
+
+    // Hash the new password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+
+    // Save the new hashed password
+    user.password = hashedPassword;
     await user.save();
-    res.json({ msg: 'Password updated successfully' });
+
+    // Redirect to the profile page
+    res.redirect('/profile');
   } catch (err) {
-    console.error(err.message);
+    console.error('Error during password change:', err.message);
     res.status(500).send('Server error');
   }
 });
+
+
+
 
 // Logout route
 router.get('/logout', (req, res) => {

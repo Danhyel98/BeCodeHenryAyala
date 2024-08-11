@@ -80,6 +80,13 @@ app.use('/', authRoutes);
 // Job routes
 app.use('/jobs', jobRoutes); // Use the job routes
 
+app.get('/jobs/add-job', (req, res) => {
+  if (req.session.user) {
+    res.render('add-job', { user: req.session.user });
+  } else {
+    res.redirect('/login');
+  }
+});
 
 app.use('/', require('./routes/dashboard')); // Dashboard-related routes
 
