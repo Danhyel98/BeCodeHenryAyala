@@ -3,10 +3,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
-const auth = require('../middleware/auth');
+const auth = require('../middleware/auth'); // Ensure this middleware handles authentication
 const { uploadToCloudinary, uploadFields } = require("../cloudinary");
 const router = express.Router();
-
 
 // Register route with validation
 router.post('/register', uploadFields, [
@@ -92,6 +91,7 @@ router.post('/register', uploadFields, [
     next(err);
   }
 });
+
 // Register page
 router.get('/register', (req, res) => {
   res.render('register');
@@ -156,15 +156,16 @@ router.post('/login', async (req, res) => {
   }
 });
 
-//To go to the page login
+// Login page
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Change password
+// Change password page (only for authenticated users)
 router.get('/profile/change-password', auth, (req, res) => {
   res.render('change-password', { user: req.session.user });
 });
+
 // Route to handle password change
 router.post('/profile/change-password', auth, async (req, res) => {
   const { currentPassword, newPassword, confirmPassword } = req.body;
@@ -202,9 +203,6 @@ router.post('/profile/change-password', auth, async (req, res) => {
   }
 });
 
-
-
-
 // Logout route
 router.get('/logout', (req, res) => {
   if (req.session) {
@@ -224,7 +222,8 @@ router.get('/logout', (req, res) => {
     res.redirect('/login'); // Redirect if there's no session to destroy
   }
 });
-// Get profile route
+
+// Get profile route (only for authenticated users)
 router.get('/profile', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -237,7 +236,5 @@ router.get('/profile', auth, async (req, res) => {
     res.status(500).send('Server error');
   }
 });
-
-
 
 module.exports = router;

@@ -13,7 +13,7 @@ router.post('/', auth, async (req, res) => {
   console.log('Received POST request to /jobs');
   console.log('Request Body:', req.body);
 
-  const { title, website, contactName, contactEmail, contactPhone, address, origin, status, comments } = req.body;
+  const { companyName, title, website, contactName, contactEmail, contactPhone, address, origin, status, comments } = req.body;
 
   if (!title || !website || !origin || !status) {
     let errors = [];
