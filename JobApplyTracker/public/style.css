@@ -40,6 +40,13 @@ body {
   color: #BFA181;
   background-color: #0A1828;
 }
+body h1#job-add {
+  display: flex;
+  justify-content: center;
+}
+body h1#job-add {
+  margin: 10px 0;
+}
 body li {
   list-style: none;
 }
@@ -169,6 +176,26 @@ body .container-job-detail hr#first-hr {
 body .container-job-detail hr#sec-hr {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+body .container-job-dets {
+  display: flex;
+  justify-content: center;
+}
+body .container-job-dets input {
+  width: 100%;
+}
+body .container-job-dets input#address {
+  margin-bottom: 15px;
+}
+body .container-job-dets form {
+  width: 400px;
+}
+body .container-job-dets form fieldset {
+  border: none;
+}
+body .container-job-dets p#contact-inf-p {
+  margin: 10px 0;
+  text-decoration: underline;
 }
 
 footer {

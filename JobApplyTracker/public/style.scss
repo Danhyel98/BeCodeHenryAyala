@@ -41,6 +41,14 @@ body {
     color: #BFA181;
     @extend .poppins-medium;
 
+    h1#job-add {
+        display: flex;
+        justify-content: center;
+    }
+    h1#job-add {
+        margin: 10px 0;
+    }
+    
 li {
     list-style: none;
 }
@@ -190,6 +198,32 @@ nav {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+}
+
+
+.container-job-dets {
+    display: flex;
+    justify-content: center;
+   input {
+    width: 100%;
+    
+   
+   }
+   input#address {
+    margin-bottom: 15px;
+}
+   form {
+    width: 400px;
+    fieldset{
+        border: none;
+    }
+   }
+   p#contact-inf-p {
+    margin: 10px 0;
+    text-decoration: underline;
+}
+
+
 }
 
 
