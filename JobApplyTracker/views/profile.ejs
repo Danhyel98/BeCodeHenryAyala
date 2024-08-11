@@ -1,43 +1,32 @@
 <%- include('partials/header'); -%>
 <body>
-    <h1>Profile</h1>
-    <div class="container">
+    <h1 id="profile-title">My Profile</h1>
+    <div class="container-profile">
         <div class="profile-info">
             <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-picture">
-            <p><strong>First Name:</strong> <%= user.firstname %></p>
-            <p><strong>Last Name:</strong> <%= user.lastname %></p>
-            <p><strong>Username:</strong> <%= user.username %></p>
+            <a href="<%= user.cv %>" target="_blank">
+            </a>
+        </div>
+        <div class="update-forms">
+            <p><strong>Full name:</strong> <%= user.firstname %> <%= user.lastname %></p>
             <p><strong>Email:</strong> <%= user.email %></p>
             <p><strong>GitHub:</strong> <a href="<%= user.github %>" target="_blank"><%= user.github %></a></p>
-            <p><strong>CV:</strong> <a href="<%= user.cv %>" target="_blank">Download CV</a></p>
-        </div>
-        
-        <div class="actions">
-            <a href="/dashboard">Back to Dashboard</a>
-        </div>
+            
+            <button class="btn btn-download">Download CV</button>
 
-        <div class="update-forms">
-            <!-- Form to upload a new CV -->
-            <h2>Update CV</h2>
+            <!-- Button to upload a new CV -->
             <form action="/profile/update-cv" method="POST" enctype="multipart/form-data">
-                <input type="file" name="cv" required>
-                <button type="submit">Upload New CV</button>
+                <button type="submit" class="btn btn-update">Upload New CV</button>
             </form>
 
-            <!-- Form to change the password -->
-            <h2>Change Password</h2>
+            <!-- Button to change the password -->
             <form action="/profile/change-password" method="POST">
-                <div>
-                    <label for="currentPassword">Current Password:</label>
-                    <input type="password" id="currentPassword" name="currentPassword" required>
-                </div>
-                <div>
-                    <label for="newPassword">New Password:</label>
-                    <input type="password" id="newPassword" name="newPassword" required>
-                </div>
-                <button type="submit">Change Password</button>
+                <button type="submit" class="btn btn-update">Change Password</button>
             </form>
         </div>
+    </div>
+    <div class="actions-profile">
+        <a href="/dashboard" class="btn btn-back">Back to Dashboard</a>
     </div>
 </body>
 <%- include('partials/footer'); -%>
