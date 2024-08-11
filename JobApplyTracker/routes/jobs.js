@@ -51,6 +51,54 @@ router.post('/', auth, async (req, res) => {
 });
 
 
+// Render the edit job form
+router.get('/edit/:id', auth, async (req, res) => {
+  try {
+    const job = await Job.findById(req.params.id);
+    if (!job) {
+      return res.status(404).send('Job not found');
+    }
+    if (job.user.toString() !== req.user.id) {
+      return res.status(401).send('Not authorized');
+    }
+    res.render('edit-job', { job });
+  } catch (error) {
+    console.error('Error fetching job for edit:', error);
+    res.status(500).send('Server error');
+  }
+});
+
+// Update the job by ID
+router.post('/edit/:id', auth, async (req, res) => {
+  const { title, companyName, website, contactName, contactEmail, contactPhone, address, origin, status, comments } = req.body;
+
+  try {
+    // Find the job by ID
+    let job = await Job.findById(req.params.id);
+    if (!job) {
+      return res.status(404).send('Job not found');
+    }
+
+    // Check if the job belongs to the authenticated user
+    if (job.user.toString() !== req.user.id) {
+      return res.status(401).send('Not authorized');
+    }
+
+    // Update the job
+    job = await Job.findByIdAndUpdate(
+      req.params.id,
+      { title, companyName, website, contactName, contactEmail, contactPhone, address, origin, status, comments },
+      { new: true }
+    );
+    res.redirect(`/jobs/${job._id}`); // Redirect to the updated job detail page
+  } catch (err) {
+    console.error('Error updating job:', err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+
+
 
 
 // GET /jobs - Fetch all jobs for the authenticated user
