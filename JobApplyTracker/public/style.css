@@ -149,8 +149,26 @@ body .login-form button#login_button {
   border-radius: 5px 5px 5px 5px;
   border: none;
 }
-body h2#job-annonces-title {
+body .container-job-detail {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+body .container-job-detail h2#job-annonces-title {
   margin-top: 40px;
+}
+body .container-job-detail h1#job-title {
+  text-decoration: underline;
+  margin-bottom: 30px;
+  font-size: 50PX;
+}
+body .container-job-detail hr#first-hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .container-job-detail hr#sec-hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 footer {

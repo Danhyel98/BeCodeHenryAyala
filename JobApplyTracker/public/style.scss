@@ -41,7 +41,6 @@ body {
     color: #BFA181;
     @extend .poppins-medium;
 
-
 li {
     list-style: none;
 }
@@ -170,8 +169,27 @@ nav {
     }
 }
 
-h2#job-annonces-title {
-    margin-top: 40px;
+.container-job-detail {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    h2#job-annonces-title {
+        margin-top: 40px;
+    }
+    
+    h1#job-title {
+        text-decoration: underline;
+        margin-bottom: 30px;
+        font-size: 50PX;
+    }
+    hr#first-hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    hr#sec-hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 

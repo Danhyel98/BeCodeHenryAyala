@@ -9,7 +9,7 @@
           <% jobs.forEach(job => { %>
             <li>
               <h3><%= job.title %></h3>
-              <p>Name: <%= job.contactName %></p>
+              <p>Company: <%= job.companyName %></p>
               <a href="/jobs/<%= job._id %>" class="see-more-link">See More</a>
             </li>
           <% }) %>

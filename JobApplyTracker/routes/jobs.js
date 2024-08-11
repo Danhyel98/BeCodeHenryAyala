@@ -19,6 +19,7 @@ router.post('/', auth, async (req, res) => {
     let errors = [];
     if (!title) errors.push('Title is required');
     if (!website) errors.push('Website is required');
+    if (!companyName) errors.push('Company name is required');
     if (!origin) errors.push('Origin is required');
     if (!status) errors.push('Status is required');
     
@@ -31,6 +32,7 @@ router.post('/', auth, async (req, res) => {
       user: req.user.id,
       title,
       website,
+      companyName,
       contactName,
       contactEmail,
       contactPhone,
